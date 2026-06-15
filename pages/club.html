@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О клубе </title>
+    <link rel="stylesheet" href="../style/club.css">
+    <link rel="icon" type="image/png" href="../images/akron.png">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="../images/1.png" alt="FC Titans">
+            <h1 class="club-name"><a href="../index.html">Титаны</a></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="../pages/club.html">Клуб</a></li>
+                <li><a href="../pages/team.html">Команда</a></li>
+                <li><a href="../pages/tamaev.html">Матчи</a></li>
+                <li><a href="../pages/news.html">Новости</a></li>
+                <li><a href="../pages/shop.html">Магазин</a></li>
+                <li><a href="../pages/table.html">Таблица РПЛ</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="./shop.html">
+            <div class="cart-icon" onclick="toggleCart()">🛒 <span id="cartCount">0</span></div>
+        </a>
+            <a href="account.html" class="avatar-link">
+              <img src="../images/user-interface.png" alt="Личный кабинет" class="avatar" />
+            </a>
+        </div>
+    </header>
+
+
+    <h5 class="admin-title">О клубе</h5>
+
+    <div class="container">
+        <div class="image">
+            <img src="../images/3-184-1.jpg" alt="ФК Акрон">
+        </div>
+        <div class="content">
+            <h2>ФК «Титаны» г.Москва</h2>
+            <p>
+                Футбольный клуб «Титаны» представляет город Москва.
+                В 2022 году ФК «Титаны» вошёл в структуру управления «Академии Коноплёва» в качестве учредителя.
+                Помимо модернизации имущества и техбазы, клуб внедряет новую стратегию подготовки футболистов, которая позволяет 
+                повысить качество тренировочного процесса и обеспечить плавный переход воспитанников в профессиональный футбол.
+            </p>
+            <p class="info">Год основания: <span class="highlight">2018</span></p>
+            <p class="info">Цвета: <span class="highlight">красно-чёрные</span></p>
+            <p class="info">Домашний стадион: <span class="highlight">«Солидарность Арена» г. Москва (45 000 мест)</span></p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <h5 class="admin-title">История и знаковые события</h5>
+    <div class="timeline">
+        <span class="timeline-year active" onclick="changeYear(2011)">2011</span>
+        <span class="timeline-year" onclick="changeYear(2018)">2018</span>
+        <span class="timeline-year" onclick="changeYear(2019)">2019</span>
+        <span class="timeline-year" onclick="changeYear(2020)">2020</span>
+        <span class="timeline-year" onclick="changeYear(2021)">2021</span>
+        <span class="timeline-year" onclick="changeYear(2022)">2022</span>
+        <span class="timeline-year" onclick="changeYear(2024)">2024</span>
+    </div>
+
+    <div class="time-machine-container">
+        <div class="story-box">
+            <h2 id="title">Образование детского ФК «Титаны»</h2>
+            <p id="description">
+                Детский футбольный клуб «Титаны» был основан в 2011 году  - генеральным директором Морозовым Павлом Анатольевичем. Начиная с момента своего создания ДФК «Титаны» является постоянным участником областных и городских соревнований всех уровней и поступательно развивается, отправляя своих воспитанников и на крупные всероссийские турниры. Под руксводством квалифицированного тренерского состава в клубе занимается порядка 150 ребят разных возрастов.
+Здесь они получают возможность расти и развиваться, «Титаны» - место, где обыкновенные мальчишки превращаются в чемпионов. Клуб располагает собственным футбольным полем (60*40м), открытым для игры круглый год, оборудованным раздевалками, душевыми.
+            </p>
+        </div>
+        <div class="visual-portal">
+            <img id="time-image" src="2011.jpg" alt="FC Akron">
+        </div>
+    </div>
+
+    <div class="navigation-panel">
+        <button class="time-travel-btn" onclick="previousYear()">❮</button>
+        <button class="time-travel-btn" onclick="nextYear()">❯</button>
+    </div>
+
+
+    <h5 class="admin-title">Администрация</h5>
+
+    <div class="admin-grid">
+        <div class="admin-card">
+            <img src="../images/morozov.png" alt="Павел Морозов">
+            <div class="admin-info">
+                <h3>Морозов Павел Анатольевич</h3>
+                <p>Учредитель ФК «Титаны»</p>
+            </div>
+        </div>
+
+        <div class="admin-card">
+            <img src="../images/vlasov.png" alt="Алексей Власов">
+            <div class="admin-info">
+                <h3>Власов Алексей Борисович</h3>
+                <p>Генеральный директор</p>
+            </div>
+        </div>
+
+        <div class="admin-card">
+            <img src="../images/zadoyan.png" alt="Арам Задоян">
+            <div class="admin-info">
+                <h3>Задоян Арам Арменович</h3>
+                <p>Спортивный директор</p>
+            </div>
+        </div>
+
+        <div class="admin-card">
+            <img src="../images/timofeev.png" alt="Игорь Тимофеев">
+            <div class="admin-info">
+                <h3>Тимофеев Игорь Викторович</h3>
+                <p>Директор по безопасности</p>
+            </div>
+        </div>
+
+        <div class="admin-card">
+            <img src="../images/tokarev.png" alt="Максим Токарев">
+            <div class="admin-info">
+                <h3>Токарев Максим Николаевич</h3>
+                <p>Заместитель генерального директора по административным вопросам</p>
+            </div>
+        </div>
+
+        <div class="admin-card">
+            <img src="../images/pavlovich.png" alt="Артем Павлович">
+            <div class="admin-info">
+                <h3>Павлович Артем Вадимович</h3>
+                <p>Начальник команды</p>
+            </div>
+        </div>
+
+        <div class="admin-card">
+            <img src="../images/kopaev.png" alt="Владимир Колаев">
+            <div class="admin-info">
+                <h3>Колаев Владимир Владимирович</h3>
+                <p>Старший администратор</p>
+            </div>
+        </div>
+
+        <div class="admin-card">
+            <img src="../images/petrov.png" alt="Александр Петров">
+            <div class="admin-info">
+                <h3>Петров Александр Александрович</h3>
+                <p>Администратор</p>
+            </div>
+        </div>
+        <div class="admin-card">
+            <img src="../images/zasiev.png" alt="Александр Петров">
+            <div class="admin-info">
+                <h3>Засиев Руслан Давидович</h3>
+                <p>Главный врач</p>
+            </div>
+        </div>
+        <div class="admin-card">
+            <img src="../images/bostanov.png" alt="Александр Петров">
+            <div class="admin-info">
+                <h3>Бостанов Искандер Умарович</h3>
+                <p>Врач</p>
+            </div>
+        </div>
+        <div class="admin-card">
+            <img src="../images/asanov.png" alt="Александр Петров">
+            <div class="admin-info">
+                <h3>Асанов Азамат Асланович</h3>
+                <p>Врач</p>
+            </div>
+        </div>
+        <div class="admin-card">
+            <img src="../images/aslanova.png" alt="Александр Петров">
+            <div class="admin-info">
+                <h3>Асланова Яна Альбертовна</h3>
+                <p>Реабилитолог</p>
+            </div>
+        </div>
+        <div class="admin-card">
+            <img src="../images/kalinin.png" alt="Александр Петров">
+            <div class="admin-info">
+                <h3>Калинин Владимир Алексеевич</h3>
+                <p>Физиотерапевт</p>
+            </div>
+        </div>
+        <div class="admin-card">
+            <img src="../images/rakov.png" alt="Александр Петров">
+            <div class="admin-info">
+                <h3>Раков Игорь Олегович</h3>
+                <p>Массажист</p>
+            </div>
+        </div>
+        <div class="admin-card">
+            <img src="../images/terentiev.png" alt="Александр Петров">
+            <div class="admin-info">
+                <h3>Терентьев Виталий Владимирович</h3>
+                <p>Массажист</p>
+            </div>
+        </div>
+        <div class="admin-card">
+            <img src="../images/nesterov.png" alt="Александр Петров">
+            <div class="admin-info">
+                <h3>Нестеров Виктор Вадимович</h3>
+                <p>Переводчик</p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <h6 class="admin-title">Стадион</h6>
+    <div class="stadium-container">
+        <div class="arena-wrapper">
+            <img src="../images/stadion.jpg" alt="Стадион Самара Арена" class="arena-image">
+            
+            <div class="arena-info">
+                <h2 class="arena-title">Стадион <span class="stadium-emphasis">«Солидарность Арена»</span> — домашний стадион ФК «Титаны»</h2>
+                <p class="arena-address">125424, Москва, Волоколамское ш., д. 69, стр. 2</p>
+            </div>
+        </div>
+        
+    </div>
+
+    <h6 class="admin-title">Контакты</h6>
+    <div class="contacts-container">
+        
+        <p>125424, Москва, Волоколамское ш., д. 69, стр. 2</p>
+    
+        <p><strong>Контакт-центр клуба:</strong> <span class="phone">+7 (495) 111-19-22</span></p>
+    
+        <p class="section-title">Приемная клуба</p>
+        <p>Факс: <span class="phone">+7 (495) 530-95-09</span></p>
+        <p>Телефон: <span class="phone">+7 (495) 530-95-08</span></p>
+        <p>titans@gmail.com</p>
+    
+        <p class="section-title">Приемная генерального директора</p>
+        <p>Тел.: <span class="phone">+7 (495) 530-95-07</span></p>
+    </div>
+
+    <section class="trophie">
+        <h2>Наши трофеи</h2>
+        <div class="trophies-container">
+            <div class="trophy-item">
+                <img src="../images/ec_pokalsieger.avif" alt="Кубок России">
+                <h3>Кубок России</h3>
+                <p> Побед: 1</p>
+            </div>
+        </div>
+    </section>
+    
+
+
+
+
+    
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-partners">
+            <h3>ПАРТНЕРЫ</h3>
+            <div class="footer-partner-logos">
+                <a href="https://www.championat.com/"><img src="../images/chempionatt.webp" alt="ladaa"></a>
+                <a href="https://www.sports.ru/"><img src="../images/sports.webp" alt="aeroflotik"></a>
+                <a href="https://railfgk.ru/"><img src="../images/fedgruzkomp.webp" alt="megafon"></a>
+                <a href="https://www.sogaz.ru/"><img src="../images/cogaz.webp" alt="wildberries"></a>
+            </div>
+        </div>
+    
+       
+    
+        <div class="footer-socials">
+            <a href="https://vk.com/feed"><img src="../images/vk.png" alt="VK"></a>
+            <a href="https://web.telegram.org/"><img src="../images/telegram.png" alt="telegram"></a>
+            <a href="https://www.youtube.com/"><img src="../images/youtube (1).png" alt="youtube"></a>
+        </div>
+    
+        <div class="footer-legal">
+            <p style="color: white;">© ФК Титаны - 2026</p>
+        </div>
+    </footer>
+    <script>
+         let years = [2011, 2018, 2019, 2020, 2021, 2022, 2024];
+        let currentIndex = 0;
+
+        let events = {
+            2011: {
+                title: "Образование детского ФК «Титаны»",
+                description: "Детский футбольный клуб «Титаны» был основан в 2011 году  - генеральным директором Морозовым Павлом Анатольевичем. Начиная с момента своего создания ДФК «Титаны» является постоянным участником областных и городских соревнований всех уровней и поступательно развивается, отправляя своих воспитанников и на крупные всероссийские турниры. Под руксводством квалифицированного тренерского состава в клубе занимается порядка 150 ребят разных возрастов. Здесь они получают возможность расти и развиваться, «Титаны» - место, где обыкновенные мальчишки превращаются в чемпионов. Клуб располагает собственным футбольным полем (60*40м), открытым для игры круглый год, оборудованным раздевалками, душевыми.",
+                image: "2011.jpg"
+            },
+            2018: {
+                title: "Сезон 2018: создание взрослой команды",
+                description: "Весной 2018 года футбольное подразделение пополнилось взрослой командой «Титаны», которая стартовала в Первенстве и Кубке России по футболу среди команд III дивизиона. Первый сезон стал для команды успешным: по итогам чемпионата клуб стал призером, заняв третье место, а также добрался до полуфинала кубкового турнира",
+                image: "2018.jpg"
+            },
+            2019: {
+                title: "Сезон 2019/2020: переход в «профессионалы»",
+                description: "Руководство решило продолжить поступательное развитие команды, и в 2019 году клуб прошел процедуру лицензирования в РФС для участия в Первенстве России по футболу. Дебют «Титанов» на профессиональном уровне получился успешным: команда закрепилесь в группе лидеров репулярного чемпионата и в первом же розыгрыше ОЛИМП-Кубка России по футболу остановилась в шаге от матча. 1/16 финала с клубом российской премьер-пиги.",
+                image: "2019.jpg"
+            },
+            2020: {
+                title: "Сезон 2020/21: дебют в ФНЛ",
+                description: "По итогам сезона 2019/20 москвичи добились повышения в классе, заняв первое место по итогам сыгранных 17 туров Олимп-Первенства. По итогам 42 сыгранных матчей в Футбольной Национальной Лиге «Титаны» заняли 17 место в подэлитном дивизионе страны и по приоритетному праву сохранил место в Олимп-ФНЛ в связи с банкротством «Тамбова».",
+                image: "2020.jpg"
+            },
+            2021: {
+                title: "Сезон 2021/22: лучший результат в Футбольной национальной лиге",
+                description: "Неудачный старт команды осенью трансформировался в длительную беспроигрышную серию и приближение клуба к зоне стыковых матчей. Весной 2022 года «Титаны» старались вклиниться в борьбу за выход в РПЛ, но команде не хватило нескольких побед. Итоговое 9-е место в сезоне 2021/22, стало самым успешным за всю историю клуба.",
+                image: "2021.jpg"
+            },
+            2022: {
+                title: "Сезон 2022/23: Победа в кубке России и приход штаба Евгения Калешина",
+                description: "После неоднозначного старта в сентябре «Титаны» возглавил Евгений Налешин - участник полуфинала Кубка России 2002/2003. С новым тренерским штабом команда смогла закончить сезон в верхней части турнирной таблицы, повторив достижение прошлого розыгрыша Первой Лиги, а также добилась исторического результата в Кубке России. За всю историю российского кубка только четыре команды подэлитного дивизиона проходили четыре клуба РПЛ, а «красно-чёрным» удалось выбить практически всё московское представительство элиты в плей-офф: «Торпедо», «Локомотив», «Динамо» и «Спартак». Новая система розыгрыша турнира в сезоне 2022/23 стала большим испытанием для команд из низших лиг, но наша команда смогла дойти до финала Кубка России и обыграла в финальном матче Петербургский «Зенит» со счетом 1:0. В 2023 году профессиональному клубу «Титаны» исполнилось 5 лет - это самая молодая команда высших российских дивизионов. ",
+                image: "titanss.jpg"
+            },
+            2024: {
+                title: "Сезон 2023/24: выход в МИР Российскую Премьер Лигу",
+                description: "«Титаны» весь сезон шли в лидирующей группе команд, завершил первый круг на первом месте, но не смогли добиться прямого выхода в элиту. С новым тренерским штабом во главе с Звуром Тедеевым команда взяла бронзовые медали Футбольной Национальной лиги и добилась права сыграть в переходных матчах с екатеринбургским «Уралом». По итогам двухматчевого противостояния «Титаны» вышли в МИР Российскую Премьер Лигу (3:2). Команда проделала большой турнирный путь всего за шесть лет своего существования.",
+                image: "2024.jpg"
+            }
+        };
+
+        function changeYear(year) {
+            currentIndex = years.indexOf(year);
+            document.getElementById("title").innerText = events[year].title;
+            document.getElementById("description").innerText = events[year].description;
+            document.getElementById("time-image").src = events[year].image;
+
+            document.querySelectorAll(".timeline-year").forEach(el => el.classList.remove("active"));
+            document.querySelector(`.timeline-year:nth-child(${currentIndex + 1})`).classList.add("active");
+        }
+
+        function previousYear() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                changeYear(years[currentIndex]);
+            }
+        }
+
+        function nextYear() {
+            if (currentIndex < years.length - 1) {
+                currentIndex++;
+                changeYear(years[currentIndex]);
+            }
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            const authIcon = document.getElementById("authIcon");
+            const authPopup = document.getElementById("authPopup");
+            const loginForm = document.getElementById("loginForm");
+            const registerForm = document.getElementById("registerForm");
+            const openRegister = document.getElementById("openRegister");
+            const openLogin = document.getElementById("openLogin");
+    
+            authIcon.addEventListener("click", function (event) {
+                event.stopPropagation();
+                authPopup.style.display = authPopup.style.display === "block" ? "none" : "block";
+            });
+    
+
+            document.addEventListener("click", function (event) {
+                if (!authPopup.contains(event.target) && event.target !== authIcon) {
+                    authPopup.style.display = "none";
+                }
+            });
+    
+
+            openRegister.addEventListener("click", function (event) {
+                event.preventDefault();
+                loginForm.style.display = "none";
+                registerForm.style.display = "block";
+            });
+
+            openLogin.addEventListener("click", function (event) {
+                event.preventDefault();
+                registerForm.style.display = "none";
+                loginForm.style.display = "block";
+            });
+        });
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addToCart(name, price) {
+  cart.push({ name, price });
+  updateCart();
+}
+
+function updateCart() {
+  const cartItems = document.getElementById("cartItems");
+  const totalPrice = document.getElementById("totalPrice");
+  const cartCount = document.getElementById("cartCount");
+
+  cartItems.innerHTML = "";
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    const li = document.createElement("li");
+    li.textContent = `${item.name} — ${item.price}₽`;
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "Удалить";
+    removeBtn.onclick = () => {
+      cart.splice(index, 1);
+      updateCart();
+    };
+    li.appendChild(removeBtn);
+    cartItems.appendChild(li);
+    total += item.price;
+  });
+
+  totalPrice.textContent = total;
+  cartCount.textContent = cart.length;
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function toggleCart() {
+  document.getElementById("cart").classList.toggle("hidden");
+}
+
+function checkout() {
+  if (cart.length === 0) return alert("Корзина пуста");
+  document.getElementById("checkoutForm").classList.remove("hidden");
+}
+
+function completeOrder(e) {
+  e.preventDefault();
+  const name = document.getElementById("orderName").value.trim();
+  const address = document.getElementById("orderAddress").value.trim();
+  const orderId = "TIT" + Date.now();
+
+  const order = {
+    id: orderId,
+    name,
+    address,
+    items: cart,
+    total: cart.reduce((sum, item) => sum + item.price, 0)
+  };
+
+  let orders = JSON.parse(localStorage.getItem("orders")) || [];
+  orders.push(order);
+  localStorage.setItem("orders", JSON.stringify(orders));
+
+  alert(`Заказ оформлен!\nНомер: ${orderId}\nИмя: ${name}\nАдрес: ${address}`);
+  cart = [];
+  updateCart();
+  document.getElementById("checkoutForm").classList.add("hidden");
+  localStorage.removeItem("cart");
+}
+
+
+
+    </script>
+</body>
+</html>

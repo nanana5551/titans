@@ -1,0 +1,572 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: rgb(235, 237, 240);
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-size: 19px;
+}
+
+header {
+    background-color: #c60428;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .header-actions {
+      margin-top: 10px;
+      justify-content: center;
+    }
+  
+    nav {
+      margin-top: 10px;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+  
+
+nav ul li {
+  display: inline;
+
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+  
+  main {
+    padding: 30px;
+  }
+  
+  .product-grid {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .product {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 220px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .product img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .cart {
+    margin-top: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .cart.hidden,
+  #checkoutForm.hidden {
+    display: none;
+  }
+  
+  .cart-icon {
+    cursor: pointer;
+    font-size: 20px;
+    background: white;
+    color: #c60428;
+    padding: 5px 10px;
+    border-radius: 8px;
+  }
+  
+  #checkoutForm {
+    margin-top: 20px;
+  }
+  
+  form input {
+    padding: 8px;
+    margin: 5px 0;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+    padding-right: 20px;
+  }
+  
+  .avatar-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #fff; /* Можно убрать или заменить при необходимости */
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  
+  .avatar:hover {
+    transform: scale(1.05);
+    border: 2px solid #333;
+  }
+
+  #checkoutForm {
+    margin-top: 30px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  #checkoutForm button[type="submit"] {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #c60428;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+  }
+  
+  #checkoutForm button[type="submit"]:hover {
+    background-color: #a50322;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.club-name {
+  font-size: 26px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.club-name a{
+  font-size: 26px;
+  text-decoration: none;
+  color: white;
+}  
+
+footer {
+    background-color: #c60428;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative; 
+    z-index: 10; 
+}
+
+.partners, .social-media {
+    margin-bottom: 20px;
+}
+
+.partners h3, .social-media h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.partners-logos, .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.partners-logos img {
+    height: 50px;
+    width: auto;
+}
+
+.social-icons a img {
+    height: 40px;
+    width: 40px;
+    transition: transform 0.3s;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.1);
+}
+
+.auth-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.auth-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.auth-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.auth-popup {
+    display: none;
+    position: absolute;
+    right: 50px;
+    top: 70px;
+    background: white;
+    color: black;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    z-index: 100;
+}
+
+.auth-popup input {
+    width: 100%;
+    padding: 7px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.auth-popup .login-btn,
+.auth-popup .register-btn {
+    width: 100%;
+    background: #c60428;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.auth-popup .login-btn:hover,
+.auth-popup .register-btn:hover {
+    background: #a30322;
+}
+
+.auth-popup p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.auth-popup a {
+    color: #c60428;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-popup a:hover {
+    text-decoration: underline;
+}
+.footer-partners h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer-partner-logos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.footer-partner-logos img {
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.footer-section {
+    margin: 0 20px;
+}
+
+.footer-section h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-socials {
+    margin-top: 20px;
+}
+
+.footer-socials a img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+.footer-legal {
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.footer-legal a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-legal a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1; 
+    margin-top: 30px;
+    margin-bottom: 30px; 
+}
+
+/* Стили для таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    font-size: 19px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #c60428;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+tr:hover {
+    background-color: #e4e4e4;
+}
+
+.header-actions a,
+.header-actions a:hover,
+.header-actions a:focus,
+header > a,
+header > a:hover,
+header > a:focus {
+  text-decoration: none;
+}
+
+.titans-row,
+.titans-row:hover {
+    background: #c60428;
+    color: white;
+    font-weight: bold;
+}
+
+.titans-row td {
+    border-color: #a50322;
+}
+
+.titans-row .points {
+    color: white;
+}
+
+.team-logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.team-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.points {
+    font-weight: bold;
+    color: #2c7d1f;
+}
+
+@media (max-width: 900px) {
+  header {
+    padding: 16px;
+    gap: 14px;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  nav ul {
+    gap: 8px 12px;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+
+  .header-actions {
+    margin-left: 0;
+    padding-right: 0;
+  }
+
+  .container {
+    width: calc(100% - 24px);
+    margin: 16px auto;
+    padding: 12px;
+    overflow-x: auto;
+  }
+
+  .container h1 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  table {
+    min-width: 760px;
+  }
+
+  th,
+  td {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .team-name {
+    justify-content: flex-start;
+    text-align: left;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+
+  nav ul {
+    flex-direction: row;
+  }
+
+  .club-name,
+  .club-name a {
+    font-size: 22px;
+  }
+
+  .container h1 {
+    font-size: 20px;
+  }
+}
+
+
+
+

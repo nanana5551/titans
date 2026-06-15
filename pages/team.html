@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Команда</title>
+    <link rel="stylesheet" href="../style/team.css">
+    <link rel="icon" type="image/png" href="../images/akron.png">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="../images/1.png" alt="FC Titans">
+            <h1 class="club-name"><a href="../index.html">Титаны</a></h1>
+        </div>
+        <nav>
+            <ul>
+              <li><a href="../index.html">Главная</a></li>
+              <li><a href="../pages/club.html">Клуб</a></li>
+              <li><a href="../pages/team.html">Команда</a></li>
+              <li><a href="../pages/tamaev.html">Матчи</a></li>
+              <li><a href="../pages/news.html">Новости</a></li>
+              <li><a href="shop.html" class="active">Магазин</a></li>
+              <li><a href="../pages/table.html">Таблица РПЛ</a></li>
+            </ul>
+          </nav>
+        
+          <div class="header-actions">
+            <a href="./shop.html">
+            <div class="cart-icon" onclick="toggleCart()">🛒 <span id="cartCount">0</span></div>
+        </a>
+            <a href="account.html" class="avatar-link">
+              <img src="../images/user-interface.png" alt="Личный кабинет" class="avatar" />
+            </a>
+          </div>
+    </header>
+    <h6 class="pitbull">Команда</h6>
+    <!-- Тренера -->
+
+    <div id="players-section" class="tab-content active">
+        <h5 class="position-title">Тренерский штаб</h5>
+        <div class="players">
+            <!-- Игрок 1 -->
+            <div class="player-card">
+                <img src="../images/tedeev.png" alt="Александр Васютин">
+                <div class="player-info">
+                    <span class="player-name">Заур Эдуардович Тедеев</span>
+                    <span class="player-role">Главный тренер</span>
+                    <div class="player-country">
+                        <img src="../images/orig.webp" alt="Флаг России" class="flag-icon">
+                        <span>Россия</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/kalashnikov.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-name">Илья Евгеньевич Калашников</span>
+                    <span class="player-role">Старший тренер</span>
+                    <div class="player-country">
+                        <img src="../images/orig.webp" alt="Флаг России" class="flag-icon">
+                        <span>Россия</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/isakov.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-name">Мурат Салимович Исаков</span>
+                    <span class="player-role">Тренер</span>
+                    <div class="player-country">
+                        <img src="../images/orig.webp" alt="Флаг России" class="flag-icon">
+                        <span>Россия</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/shaikov.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-name">Расул Ширваниевич Шайхов</span>
+                    <span class="player-role">Тренер</span>
+                    <div class="player-country">
+                        <img src="../images/orig.webp" alt="Флаг России" class="flag-icon">
+                        <span>Россия</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/savchenko.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-name">Владимир Николаевич Савченко</span>
+                    <span class="player-role">Тренер по работе с вратарями</span>
+                    <div class="player-country">
+                        <img src="../images/orig.webp" alt="Флаг России" class="flag-icon">
+                        <span>Россия</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/shergin.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-name">Сергей Александрович Шергин</span>
+                    <span class="player-role">Тренер по физической подготовке</span>
+                    <div class="player-country">
+                        <img src="../images/orig.webp" alt="Флаг России" class="flag-icon">
+                        <span>Россия</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/elesin.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-name">Никита Михайлович Елесин</span>
+                    <span class="player-role">Тренер по физической подготовке</span>
+                    <div class="player-country">
+                        <img src="../images/orig.webp" alt="Флаг России" class="flag-icon">
+                        <span>Россия</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/zharikov.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-name">Дмитрий Александрович Жариков</span>
+                    <span class="player-role">Тренер-аналитик</span>
+                    <div class="player-country">
+                        <img src="../images/orig.webp" alt="Флаг России" class="flag-icon">
+                        <span>Россия</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Вратари -->
+    <div id="players-section" class="tab-content active">
+        <h5 class="position-title">Вратари</h5>
+        <div class="players">
+            <!-- Игрок 1 -->
+            <div class="player-card">
+                <img src="../images/vasutin.png" alt="Александр Васютин">
+                <div class="player-info">
+                    <span class="player-number">78</span>
+                    <span class="player-name">Александр Васютин</span>
+                    <span class="player-role">Вратарь</span>
+                    <span class="player-age">30 лет</span>
+                    <div class="player-country">
+                        <img src="../images/orig.webp" alt="Флаг России" class="flag-icon">
+                        <span>Россия</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/volkov.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-number">1</span>
+                    <span class="player-name">Сергей Волков</span>
+                    <span class="player-role">Вратарь</span>
+                    <span class="player-age">29 лет</span>
+                    <div class="player-country">
+                        <img src="../images/orig.webp" alt="Флаг России" class="flag-icon">
+                        <span>Россия</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Защитники -->
+    <div id="players-section" class="tab-content active">
+        <h5 class="position-title">Защитники</h5>
+        <div class="players">
+            <!-- Игрок 1 -->
+            <div class="player-card">
+                <img src="../images/savichev.png" alt="Александр Васютин">
+                <div class="player-info">
+                    <span class="player-number">77</span>
+                    <span class="player-name">Константин Савичев</span>
+                    <span class="player-role">Защитник</span>
+                    <span class="player-age">31 год</span>
+                    <div class="player-country">
+                        <img src="../images/orig.webp" alt="Флаг России" class="flag-icon">
+                        <span>Россия</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/nedelcharu.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-number">22</span>
+                    <span class="player-name">Йонуц Неделчару</span>
+                    <span class="player-role">Защитник</span>
+                    <span class="player-age">28 лет</span>
+                    <div class="player-country">
+                        <img src="../images/romania.png" alt="Флаг России" class="flag-icon">
+                        <span>Румыния</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/eskoval.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-number">26</span>
+                    <span class="player-name">Родриго Эсковаль</span>
+                    <span class="player-role">Защитник</span>
+                    <span class="player-age">27 лет</span>
+                    <div class="player-country">
+                        <img src="../images/portugal.png" alt="Флаг России" class="flag-icon">
+                        <span>Португалия</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/fernandes.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-number">21</span>
+                    <span class="player-name">Роберто Фернандес</span>
+                    <span class="player-role">Защитник</span>
+                    <span class="player-age">25 лет</span>
+                    <div class="player-country">
+                        <img src="../images/bolivia.png" alt="Флаг России" class="flag-icon">
+                        <span>Боливия</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/bokoev.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-number">19</span>
+                    <span class="player-name">Марат Бокоев</span>
+                    <span class="player-role">Защитник</span>
+                    <span class="player-age">23 года</span>
+                    <div class="player-country">
+                        <img src="../images/flag-russia.png" alt="Флаг России" class="flag-icon">
+                        <span>Россия</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/bardibahin.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-number">80</span>
+                    <span class="player-name">Вячеслав Иванов</span>
+                    <span class="player-role">Защитник</span>
+                    <span class="player-age">22 года</span>
+                    <div class="player-country">
+                        <img src="../images/flag-russia.png" alt="Флаг России" class="flag-icon">
+                        <span>Россия</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/soloviev.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-number">54</span>
+                    <span class="player-name">Алексей Соловьев</span>
+                    <span class="player-role">Защитник</span>
+                    <span class="player-age">21 год</span>
+                    <div class="player-country">
+                        <img src="../images/flag-russia.png" alt="Флаг России" class="flag-icon">
+                        <span>Россия</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Полузащитники -->
+    <div id="players-section" class="tab-content active">
+        <h5 class="position-title">Полузащитники</h5>
+        <div class="players">
+            <!-- Игрок 1 -->
+            <div class="player-card">
+                <img src="../images/lonchar.png" alt="Александр Васютин">
+                <div class="player-info">
+                    <span class="player-number">15</span>
+                    <span class="player-name">Стефан Лончар</span>
+                    <span class="player-role">Полузащитник</span>
+                    <span class="player-age">29 лет</span>
+                    <div class="player-country">
+                        <img src="../images/chernogoria.png" alt="Флаг России" class="flag-icon">
+                        <span>Черногория</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/kuzmin.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-number">6</span>
+                    <span class="player-name">Максим Кузьмин</span>
+                    <span class="player-role">Полузащитник</span>
+                    <span class="player-age">28 лет</span>
+                    <div class="player-country">
+                        <img src="../images/flag-russia.png" alt="Флаг России" class="flag-icon">
+                        <span>Россия</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/galoyan.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-number">20</span>
+                    <span class="player-name">Артур Галоян</span>
+                    <span class="player-role">Полузащитник</span>
+                    <span class="player-age">25 лет</span>
+                    <div class="player-country">
+                        <img src="../images/flag-russia.png" alt="Флаг России" class="flag-icon">
+                        <span>Россия</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/bakaev.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-number">17</span>
+                    <span class="player-name">Солтмурад Бакаев</span>
+                    <span class="player-role">Полузащитник</span>
+                    <span class="player-age">25 лет</span>
+                    <div class="player-country">
+                        <img src="../images/flag-russia.png" alt="Флаг России" class="flag-icon">
+                        <span>Россия</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/moskvichev.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-number">65</span>
+                    <span class="player-name">Владимир Москвичев</span>
+                    <span class="player-role">Полузащитник</span>
+                    <span class="player-age">25 лет</span>
+                    <div class="player-country">
+                        <img src="../images/flag-russia.png" alt="Флаг России" class="flag-icon">
+                        <span>Россия</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/hubulov.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-number">14</span>
+                    <span class="player-name">Владимир Хубулов</span>
+                    <span class="player-role">Полузащитник</span>
+                    <span class="player-age">24 года</span>
+                    <div class="player-country">
+                        <img src="../images/flag-russia.png" alt="Флаг России" class="flag-icon">
+                        <span>Россия</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/danilin.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-number">7</span>
+                    <span class="player-name">Кирилл Данилин</span>
+                    <span class="player-role">Полузащитник</span>
+                    <span class="player-age">22 года</span>
+                    <div class="player-country">
+                        <img src="../images/flag-russia.png" alt="Флаг России" class="flag-icon">
+                        <span>Россия</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/djurasovich.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-number">5</span>
+                    <span class="player-name">Алекса Джурасович</span>
+                    <span class="player-role">Полузащитник</span>
+                    <span class="player-age">22 года</span>
+                    <div class="player-country">
+                        <img src="../images/serbia.png" alt="Флаг России" class="flag-icon">
+                        <span>Сербия</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/esanov.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-number">25</span>
+                    <span class="player-name">Шерзод Эсанов</span>
+                    <span class="player-role">Полузащитник</span>
+                    <span class="player-age">22 года</span>
+                    <div class="player-country">
+                        <img src="../images/uzb.webp" alt="Флаг России" class="flag-icon">
+                        <span>Узбекистан</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/boldirev.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-number">91</span>
+                    <span class="player-name">Максим Болдырев</span>
+                    <span class="player-role">Полузащитник</span>
+                    <span class="player-age">21 год</span>
+                    <div class="player-country">
+                        <img src="../images/flag-russia.png" alt="Флаг России" class="flag-icon">
+                        <span>Россия</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Нападающие -->
+    <div id="players-section" class="tab-content active">
+        <h5 class="position-title">Нападающие</h5>
+        <div class="players">
+            <!-- Игрок 1 -->
+            
+            <div class="player-card">
+                <img src="../images/gribov.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-number">97</span>
+                    <span class="player-name">Сергей Грибов</span>
+                    <span class="player-role">Нападающий</span>
+                    <span class="player-age">20 лет</span>
+                    <div class="player-country">
+                        <img src="../images/orig.webp" alt="Флаг России" class="flag-icon">
+                        <span>Россия</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/pestryakov.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-number">71</span>
+                    <span class="player-name">Дмитрий Пестряков</span>
+                    <span class="player-role">Нападающий</span>
+                    <span class="player-age">18 лет</span>
+                    <div class="player-country">
+                        <img src="../images/orig.webp" alt="Флаг России" class="flag-icon">
+                        <span>Россия</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/dmitriev.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-number">69</span>
+                    <span class="player-name">Арсений Дмитриев</span>
+                    <span class="player-role">Нападающий</span>
+                    <span class="player-age">17 лет</span>
+                    <div class="player-country">
+                        <img src="../images/orig.webp" alt="Флаг России" class="flag-icon">
+                        <span>Россия</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/teryaev.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-number">80</span>
+                    <span class="player-name">Дмитрий Теряев</span>
+                    <span class="player-role">Нападающий</span>
+                    <span class="player-age">19 лет</span>
+                    <div class="player-country">
+                        <img src="../images/orig.webp" alt="Флаг России" class="flag-icon">
+                        <span>Россия</span>
+                    </div>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="../images/holodov.png" alt="Сергей Волков">
+                <div class="player-info">
+                    <span class="player-number">33</span>
+                    <span class="player-name">Максим Холодов</span>
+                    <span class="player-role">Нападающий</span>
+                    <span class="player-age">19 лет</span>
+                    <div class="player-country">
+                        <img src="../images/orig.webp" alt="Флаг России" class="flag-icon">
+                        <span>Россия</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- Тренерский штаб -->
+    <div id="staff-section" class="tab-content">
+        <h5 class="position-title">Тренерский штаб</h5>
+        <div class="players">
+            <div class="player-card">
+                <img src="coach.png" alt="Тренер">
+                <div class="player-info">
+                    <span class="player-name">Иван Иванов</span>
+                    <span class="player-role">Главный тренер</span>
+                    <span class="player-country">🇷🇺 Россия</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="footer-partners">
+            <h3>ПАРТНЕРЫ</h3>
+            <div class="footer-partner-logos">
+                <a href="https://www.championat.com/"><img src="../images/chempionatt.webp" alt="ladaa"></a>
+                <a href="https://www.sports.ru/"><img src="../images/sports.webp" alt="aeroflotik"></a>
+                <a href="https://railfgk.ru/"><img src="../images/fedgruzkomp.webp" alt="megafon"></a>
+                <a href="https://www.sogaz.ru/"><img src="../images/cogaz.webp" alt="wildberries"></a>
+            </div>
+        </div>
+    
+       
+    
+        <div class="footer-socials">
+            <a href="https://vk.com/feed"><img src="../images/vk.png" alt="VK"></a>
+            <a href="https://web.telegram.org/"><img src="../images/telegram.png" alt="telegram"></a>
+            <a href="https://www.youtube.com/"><img src="../images/youtube (1).png" alt="youtube"></a>
+        </div>
+    
+        <div class="footer-legal">
+            <p style="color: white; font-size: 17px;">© ФК Титаны - 2026</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const authIcon = document.getElementById("authIcon");
+            const authPopup = document.getElementById("authPopup");
+            const loginForm = document.getElementById("loginForm");
+            const registerForm = document.getElementById("registerForm");
+            const openRegister = document.getElementById("openRegister");
+            const openLogin = document.getElementById("openLogin");
+    
+            authIcon.addEventListener("click", function (event) {
+                event.stopPropagation();
+                authPopup.style.display = authPopup.style.display === "block" ? "none" : "block";
+            });
+    
+
+            document.addEventListener("click", function (event) {
+                if (!authPopup.contains(event.target) && event.target !== authIcon) {
+                    authPopup.style.display = "none";
+                }
+            });
+    
+
+            openRegister.addEventListener("click", function (event) {
+                event.preventDefault();
+                loginForm.style.display = "none";
+                registerForm.style.display = "block";
+            });
+
+            openLogin.addEventListener("click", function (event) {
+                event.preventDefault();
+                registerForm.style.display = "none";
+                loginForm.style.display = "block";
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

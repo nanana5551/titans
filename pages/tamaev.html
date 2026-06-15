@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Матчи</title>
+    <link rel="stylesheet" href="../style/tamaev.css">
+    <link rel="icon" type="image/png" href="../images/akron.png">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="../images/1.png" alt="FC Titans">
+            <h1 class="club-name"><a href="../index.html">Титаны</a></h1>
+        </div>
+        <nav>
+            <ul>
+              <li><a href="../index.html">Главная</a></li>
+              <li><a href="../pages/club.html">Клуб</a></li>
+              <li><a href="../pages/team.html">Команда</a></li>
+              <li><a href="../pages/tamaev.html">Матчи</a></li>
+              <li><a href="../pages/news.html">Новости</a></li>
+              <li><a href="shop.html" class="active">Магазин</a></li>
+              <li><a href="../pages/table.html">Таблица РПЛ</a></li>
+            </ul>
+          </nav>
+        
+          <div class="header-actions">
+            <a href="../pages/shop.html">
+            <div class="cart-icon" onclick="toggleCart()">🛒 <span id="cartCount">0</span></div></a>
+            <a href="account.html" class="avatar-link">
+              <img src="../images/user-interface.png" alt="Личный кабинет" class="avatar" />
+            </a>
+          </div>
+        
+        <style>
+            .schedule {
+                width: 100%;
+                margin: auto;
+                margin-top: 100px;
+                font-family: Arial, sans-serif;
+            }
+
+            .match-box {
+                width: 100%;
+                max-width: 1200px;
+                margin: 30px auto;
+                background-color: #f4f8fb;
+                padding: 15px 20px;
+                border-bottom: 1px solid #dce3ea;
+                font-family: Arial, sans-serif;
+            }
+
+            .match-top {
+                display: flex;
+                justify-content: space-between;
+                font-size: 18px;
+                color: #667;
+                margin-bottom: 8px;
+            }
+
+            .match-tournament {
+                color: #667;
+                font-weight: 600;
+            }
+
+            .match-content {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 22px;
+                font-weight: bold;
+                color: #002f6c;
+            }
+
+            .team-name {
+                width: 35%;
+            }
+
+            .team-right {
+                text-align: right;
+            }
+
+            .match-center {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .match-center img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .score {
+                font-size: 30px;
+            }
+
+            h2 {
+                font-size: 29px;
+                font-family: Arial, sans-serif;
+                margin-left: 400px;
+
+            }
+
+            .score {
+                font-size: 30px;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+
+            .score1 {
+                font-size: 30px;
+                margin-left: 45px;
+                margin-right: 45px;
+            }
+
+            .fixture-card {
+                width: 100%;
+                max-width: 1200px;
+                margin: 30px auto;
+                background-color: #f4f8fb;
+                padding: 15px 20px;
+                border-bottom: 1px solid #dce3ea;
+                font-family: Arial, sans-serif;
+            }
+
+            .fixture-header {
+                display: flex;
+                justify-content: space-between;
+                font-weight: bold;
+                font-size: 18px;
+                color: #667;
+                margin-bottom: 8px;
+            }
+
+            .fixture-content {
+                display: flex;
+                justify-content: space-between;
+                font-size: 18px;
+                color: #667;
+                margin-bottom: 8px;
+            }
+
+            .club-name {
+                width: 150px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 22px;
+                font-weight: bold;
+                color: #002f6c;
+
+            }
+
+            .fixture-center {
+                display: flex;
+                align-items: center;
+                gap: 60px;
+            }
+
+            .club-logo {
+                width: 60px;
+                height: 60px;
+            }
+
+            .score-separator {
+                font-size: 29px;
+                font-weight: bold;
+                color: #001f4d;
+            }
+
+            .ticket-action {
+                text-align: center;
+                margin-top: 10px;
+                font-size: 25px;
+            }
+
+            .ticket-link {
+                background-color: #c60428;
+                color: #fff;
+                padding: 10px 16px;
+                border-radius: 8px;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 16px;
+                transition: background-color 0.3s;
+            }
+
+            .ticket-link:hover {
+                background-color: #a70321;
+            }
+
+            .club-name club-right{
+                text-align: right;
+
+            }
+
+            @media (max-width: 900px) {
+                .schedule {
+                    margin-top: 24px;
+                }
+
+                h2 {
+                    margin-left: 0;
+                    text-align: center;
+                }
+
+                .match-box,
+                .fixture-card {
+                    width: calc(100% - 24px);
+                    margin: 18px auto;
+                    padding: 14px;
+                }
+
+                .match-top,
+                .fixture-header,
+                .fixture-content {
+                    flex-direction: column;
+                    gap: 8px;
+                    text-align: center;
+                }
+
+                .match-content {
+                    flex-direction: column;
+                    gap: 12px;
+                    text-align: center;
+                }
+
+                .team-name,
+                .club-name {
+                    width: 100%;
+                    justify-content: center;
+                    text-align: center;
+                }
+
+                .team-right {
+                    text-align: center;
+                }
+
+                .fixture-center {
+                    justify-content: center;
+                    gap: 18px;
+                }
+
+                .score,
+                .score1 {
+                    margin-left: 0;
+                    margin-right: 0;
+                    font-size: 24px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .match-center img,
+                .club-logo {
+                    width: 46px;
+                    height: 46px;
+                }
+
+                .match-content,
+                .fixture-content {
+                    font-size: 16px;
+                }
+            }
+
+            
+        </style>
+    </header>
+
+
+    <nav class="fixed-nav">
+        <ul>
+            <li><a href="#july">Июль</a></li>
+            <li><a href="#august">Август</a></li>
+            <li><a href="#september">Сентябрь</a></li>
+            <li><a href="#october">Октябрь</a></li>
+            <li><a href="#november">Ноябрь</a></li>
+            <li><a href="#december">Декабрь</a></li>
+            <li><a href="#january">Январь</a></li>
+            <li><a href="#february">Февраль</a></li>
+            <li><a href="#march">Март</a></li>
+            <li><a href="#april">Апрель</a></li>
+            <li><a href="#may">Май</a></li>
+            <li><a href="#june">Июнь</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1 style="font-size: 28px; color: black; margin-top: 150px; text-align: center;">Матчи команды "Титаны" сезона 2025/2026</h1>
+
+        <body>
+            <div class="schedule">
+                <div id="july">
+                    <h2>Июль</h2>
+                </div>
+                <div class="match-box">
+                    <div class="match-top">
+                        <div class="match-date">Воскресенье | 20.07.25 | 15:00 МСК</div>
+                        <div class="match-tournament">Российская Премьер Лига тур 1</div>
+                    </div>
+
+                    <div class="match-content">
+                        <div class="team-name">Титаны</div>
+
+                        <div class="match-center">
+                            <img src="../images/1.png" alt="Bayern">
+                            <div class="score">2 : 3</div>
+                            <img src="../images/lokomotiv.png" alt="Inter">
+                        </div>
+
+                        <div class="team-name team-right">Локомотив Москва</div>
+                    </div>
+                </div>
+            </div>
+            <div class="match-box">
+                <div class="match-top">
+                    <div class="match-date">Воскресенье | 27.07.25 | 20:00 МСК</div>
+                    <div class="match-tournament">Российская Премьер Лига тур 2</div>
+                </div>
+
+                <div class="match-content">
+                    <div class="team-name">Факел</div>
+
+                    <div class="match-center">
+                        <img src="../images/fakel.png" alt="Bayern">
+                        <div class="score">0 : 2</div>
+                        <img src="../images/1.png" alt="Inter">
+                    </div>
+
+                    <div class="team-name team-right">Титаны</div>
+                </div>
+            </div>
+            <div class="match-box">
+                <div class="match-top">
+                    <div class="match-date">Среда | 30.07.25 | 18:30 МСК</div>
+                    <div class="match-tournament">Кубок России - Групповой этап - Тур 1</div>
+                </div>
+
+                <div class="match-content">
+                    <div class="team-name">Рубин</div>
+
+                    <div class="match-center">
+                        <img src="../images/rubin.png" alt="Bayern">
+                        <div class="score">4 : 0</div>
+                        <img src="../images/1.png" alt="Inter">
+                    </div>
+
+                    <div class="team-name team-right">Титаны</div>
+                </div>
+            </div>
+
+
+            </div>
+
+
+
+
+
+            <div class="schedule">
+                <div id="august">
+                    <h2>Август</h2>
+                    <div class="match-box">
+                        <div class="match-top">
+                            <div class="match-date">Воскресенье | 03.08.25 | 15:00 МСК</div>
+                            <div class="match-tournament">Российская Премьер Лига тур 3</div>
+                        </div>
+
+                        <div class="match-content">
+                            <div class="team-name">Титаны</div>
+
+                            <div class="match-center">
+                                <img src="../images/1.png" alt="Bayern">
+                                <div class="score">2 : 3</div>
+                                <img src="../images/dinamomsk.png" alt="Inter">
+                            </div>
+
+                            <div class="team-name team-right">Динамо Москва</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="match-box">
+                    <div class="match-top">
+                        <div class="match-date">Воскресенье | 10.08.25 | 17:30 МСК</div>
+                        <div class="match-tournament">Российская Премьер Лига тур 4</div>
+                    </div>
+
+                    <div class="match-content">
+                        <div class="team-name">Оренбург</div>
+
+                        <div class="match-center">
+                            <img src="../images/orenburg.png" alt="Bayern">
+                            <div class="score">0 : 2</div>
+                            <img src="../images/1.png" alt="Inter">
+                        </div>
+
+                        <div class="team-name team-right">Титаны</div>
+                    </div>
+                </div>
+                <div class="match-box">
+                    <div class="match-top">
+                        <div class="match-date">Пятница | 15.08.25 | 18:00 МСК</div>
+                        <div class="match-tournament">Кубок России - Групповой этап - Тур 2</div>
+                    </div>
+
+                    <div class="match-content">
+                        <div class="team-name">Факел</div>
+
+                        <div class="match-center">
+                            <img src="../images/fakel.png" alt="Bayern">
+                            <div class="score">1 : 2</div>
+                            <img src="../images/1.png" alt="Inter">
+                        </div>
+
+                        <div class="team-name team-right">Титаны</div>
+                    </div>
+                </div>
+                <div class="match-box">
+                    <div class="match-top">
+                        <div class="match-date">Вторник | 19.08.25 | 17:30 МСК</div>
+                        <div class="match-tournament">Российская Премьер Лига тур 5</div>
+                    </div>
+
+                    <div class="match-content">
+                        <div class="team-name">Титаны</div>
+
+                        <div class="match-center">
+                            <img src="../images/1.png" alt="Bayern">
+                            <div class="score">1 : 2</div>
+                            <img src="../images/rubin.png" alt="Inter">
+                        </div>
+
+                        <div class="team-name team-right">Рубин</div>
+                    </div>
+
+
+                </div>
+                <div class="match-box">
+                    <div class="match-top">
+                        <div class="match-date">Воскресенье | 24.08.25 | 15:00 МСК</div>
+                        <div class="match-tournament">Российская Премьер Лига тур 6</div>
+                    </div>
+
+                    <div class="match-content">
+                        <div class="team-name">ЦСКА</div>
+
+                        <div class="match-center">
+                            <img src="../images/cska.png" alt="Bayern">
+                            <div class="score">4 : 0</div>
+                            <img src="../images/1.png" alt="Inter">
+                        </div>
+
+                        <div class="team-name team-right">Титаны</div>
+                    </div>
+
+
+                </div>
+                <div class="match-box">
+                    <div class="match-top">
+                        <div class="match-date">Среда | 27.08.25 | 17:15 МСК</div>
+                        <div class="match-tournament">Кубок России - Групповой этап - Тур 3</div>
+                    </div>
+
+                    <div class="match-content">
+                        <div class="team-name">Титаны</div>
+
+                        <div class="match-center">
+                            <img src="../images/1.png" alt="Bayern">
+                            <div class="score">2 : 1</div>
+                            <img src="../images/zzz.png" alt="Inter">
+                        </div>
+
+                        <div class="team-name team-right">Зенит</div>
+                    </div>
+
+
+                </div>
+                <div class="match-box">
+                    <div class="match-top">
+                        <div class="match-date">Воскресенье | 31.08.25 | 20:00 МСК</div>
+                        <div class="match-tournament">Российская Премьер Лига тур 7</div>
+                    </div>
+
+                    <div class="match-content">
+                        <div class="team-name">Ахмат</div>
+
+                        <div class="match-center">
+                            <img src="../images/akhmat.png" alt="Bayern">
+                            <div class="score">0 : 0</div>
+                            <img src="../images/1.png" alt="Inter">
+                        </div>
+
+                        <div class="team-name team-right">Титаны</div>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="schedule">
+                <div id="september">
+                    <h2>Сентябрь</h2>
+                    <div class="match-box">
+                        <div class="match-top">
+                            <div class="match-date">Понедельник | 15.09.25 | 16:30 МСК</div>
+                            <div class="match-tournament">Российская Премьер Лига тур 8</div>
+                        </div>
+
+                        <div class="match-content">
+                            <div class="team-name">Титаны</div>
+
+                            <div class="match-center">
+                                <img src="../images/1.png" alt="Bayern">
+                                <div class="score">3 : 0</div>
+                                <img src="../images/khimki.png" alt="Inter">
+                            </div>
+
+                            <div class="team-name team-right">Химки</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="match-box">
+                    <div class="match-top">
+                        <div class="match-date">Четверг | 18.09.25 | 16:45 МСК</div>
+                        <div class="match-tournament">Кубок России - Групповой этап - Тур 4</div>
+                    </div>
+
+                    <div class="match-content">
+                        <div class="team-name">Титаны</div>
+
+                        <div class="match-center">
+                            <img src="../images/1.png" alt="Bayern">
+                            <div class="score">1 : 0</div>
+                            <img src="../images/fakel.png" alt="Inter">
+                        </div>
+
+                        <div class="team-name team-right">Факел</div>
+                    </div>
+                </div>
+                <div class="match-box">
+                    <div class="match-top">
+                        <div class="match-date">Воскресенье | 21.09.25 | 20:00 МСК</div>
+                        <div class="match-tournament">Российская Премьер Лига тур 9</div>
+                    </div>
+
+                    <div class="match-content">
+                        <div class="team-name">Титаны</div>
+
+                        <div class="match-center">
+                            <img src="../images/1.png" alt="Bayern">
+                            <div class="score">1 : 4</div>
+                            <img src="../images/krasnodar.png" alt="Inter">
+                        </div>
+
+                        <div class="team-name team-right">Краснодар</div>
+                    </div>
+                </div>
+                <div class="match-box">
+                    <div class="match-top">
+                        <div class="match-date">Воскресенье | 28.09.25 | 19:00 МСК</div>
+                        <div class="match-tournament">Российская Премьер Лига тур 10</div>
+                    </div>
+
+                    <div class="match-content">
+                        <div class="team-name">Ростов</div>
+
+                        <div class="match-center">
+                            <img src="../images/rostov.png" alt="Bayern">
+                            <div class="score">0 : 1</div>
+                            <img src="../images/1.png" alt="Inter">
+                        </div>
+
+                        <div class="team-name team-right">Титаны</div>
+                    </div>
+                </div>
+            </div>
+
+
+            </div>
+            <div class="schedule">
+                <div id="october">
+                    <h2>Октябрь</h2>
+                    <div class="match-box">
+                        <div class="match-top">
+                            <div class="match-date">Четверг | 02.10.25 | 21:15 МСК</div>
+                            <div class="match-tournament">Кубок России - Групповой этап - Тур 5</div>
+                        </div>
+
+                        <div class="match-content">
+                            <div class="team-name">Зенит</div>
+
+                            <div class="match-center">
+                                <img src="../images/zzz.png" alt="Bayern">
+                                <div class="score">5 : 1</div>
+                                <img src="../images/1.png" alt="Inter">
+                            </div>
+
+                            <div class="team-name team-right">Титаны</div>
+                        </div>
+                    </div>
+                    <div class="match-box">
+                        <div class="match-top">
+                            <div class="match-date">Воскресенье | 05.10.25 | 14:00 МСК</div>
+                            <div class="match-tournament">Российская Премьер Лига тур 11</div>
+                        </div>
+
+                        <div class="match-content">
+                            <div class="team-name">Титаны</div>
+
+                            <div class="match-center">
+                                <img src="../images/1.png" alt="Bayern">
+                                <div class="score">1 : 1</div>
+                                <img src="../images/parinn.png" alt="Inter">
+                            </div>
+
+                            <div class="team-name team-right">Пари НН</div>
+                        </div>
+                    </div>
+                    <div class="match-box">
+                        <div class="match-top">
+                            <div class="match-date">Суббота | 18.10.25 | 17:00 МСК</div>
+                            <div class="match-tournament">Российская Премьер Лига тур 12</div>
+                        </div>
+
+                        <div class="match-content">
+                            <div class="team-name">Титаны</div>
+
+                            <div class="match-center">
+                                <img src="../images/1.png" alt="Bayern">
+                                <div class="score">0 : 5</div>
+                                <img src="../images/zzz.png" alt="Inter">
+                            </div>
+
+                            <div class="team-name team-right">Зенит</div>
+                        </div>
+                    </div>
+                    <div class="match-box">
+                        <div class="match-top">
+                            <div class="match-date">Четверг | 23.10.25 | 18:00 МСК</div>
+                            <div class="match-tournament">Кубок России - Групповой этап - Тур 6</div>
+                        </div>
+
+                        <div class="match-content">
+                            <div class="team-name">Титаны</div>
+
+                            <div class="match-center">
+                                <img src="../images/1.png" alt="Bayern">
+                                <div class="score">0 : 1</div>
+                                <img src="../images/rubin.png" alt="Inter">
+                            </div>
+
+                            <div class="team-name team-right">Рубин</div>
+                        </div>
+                    </div>
+                    <div class="match-box">
+                        <div class="match-top">
+                            <div class="match-date">Воскресенье | 26.10.25 | 14:00 МСК</div>
+                            <div class="match-tournament">Российская Премьер Лига тур 13</div>
+                        </div>
+
+                        <div class="match-content">
+                            <div class="team-name">Динамо Махачкала</div>
+
+                            <div class="match-center">
+                                <img src="../images/makhachkala.png" alt="Bayern">
+                                <div class="score">1 : 1</div>
+                                <img src="../images/1.png" alt="Inter">
+                            </div>
+
+                            <div class="team-name team-right">Титаны</div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="schedule">
+                <div id="november">
+                    <h2>Ноябрь</h2>
+                    <div class="match-box">
+                        <div class="match-top">
+                            <div class="match-date">Понедельник | 03.11.25 | 13:00 МСК</div>
+                            <div class="match-tournament">Российская Премьер Лига тур 14</div>
+                        </div>
+
+                        <div class="match-content">
+                            <div class="team-name">Титаны</div>
+
+                            <div class="match-center">
+                                <img src="../images/1.png" alt="Bayern">
+                                <div class="score">2 : 0</div>
+                                <img src="../images/krylia.png" alt="Inter">
+                            </div>
+
+                            <div class="team-name team-right">Крылья Советов</div>
+                        </div>
+                    </div>
+                    <div class="match-box">
+                        <div class="match-top">
+                            <div class="match-date">Понедельник | 10.11.25 | 15:30 МСК</div>
+                            <div class="match-tournament">Российская Премьер Лига тур 15</div>
+                        </div>
+
+                        <div class="match-content">
+                            <div class="team-name">Спартак Москва</div>
+
+                            <div class="match-center">
+                                <img src="../images/spartakk.png" alt="Bayern">
+                                <div class="score">4 : 0</div>
+                                <img src="../images/1.png" alt="Inter">
+                            </div>
+
+                            <div class="team-name team-right">Титаны</div>
+                        </div>
+                    </div>
+                    <div class="match-box">
+                        <div class="match-top">
+                            <div class="match-date">Суббота | 22.11.25 | 18:00 МСК</div>
+                            <div class="match-tournament">Российская Премьер Лига тур 16</div>
+                        </div>
+
+                        <div class="match-content">
+                            <div class="team-name">Рубин</div>
+
+                            <div class="match-center">
+                                <img src="../images/rubin.png" alt="Bayern">
+                                <div class="score">2 : 0</div>
+                                <img src="../images/1.png" alt="Inter">
+                            </div>
+
+                            <div class="team-name team-right">Титаны</div>
+                        </div>
+                    </div>
+                    <div class="match-box">
+                        <div class="match-top">
+                            <div class="match-date">Среда | 26.11.25 | 17:15 МСК</div>
+                            <div class="match-tournament">Кубок России - Плей-офф - 1/16</div>
+                        </div>
+
+                        <div class="match-content">
+                            <div class="team-name">Шинник</div>
+
+                            <div class="match-center">
+                                <img src="../images/shinnik.png" alt="Bayern">
+                                <div class="score">0 : 1</div>
+                                <img src="../images/1.png" alt="Inter">
+                            </div>
+
+                            <div class="team-name team-right">Титаны</div>
+                        </div>
+                    </div>
+                    <div class="match-box">
+                        <div class="match-top">
+                            <div class="match-date">Воскресенье | 30.11.25 | 16:00 МСК</div>
+                            <div class="match-tournament">Российская Премьер Лига тур 17</div>
+                        </div>
+
+                        <div class="match-content">
+                            <div class="team-name">Титаны</div>
+
+                            <div class="match-center">
+                                <img src="../images/1.png" alt="Bayern">
+                                <div class="score">1 : 0</div>
+                                <img src="../images/orenburg.png" alt="Inter">
+                            </div>
+
+                            <div class="team-name team-right">Оренбруг</div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="schedule">
+                <div id="december">
+                    <h2>Декабрь</h2>
+                    <div class="match-box">
+                        <div class="match-top">
+                            <div class="match-date">Воскресенье | 07.12.25 | 18:30 МСК</div>
+                            <div class="match-tournament">Российская Премьер Лига тур 18</div>
+                        </div>
+
+                        <div class="match-content">
+                            <div class="team-name">Зенит</div>
+
+                            <div class="match-center">
+                                <img src="../images/zzz.png" alt="Bayern">
+                                <div class="score">1 : 2</div>
+                                <img src="../images/1.png" alt="Inter">
+                            </div>
+
+                            <div class="team-name team-right">Титаны</div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="schedule">
+                <div id="january">
+                    <h2>Январь</h2>
+                    <div class="match-box">
+                        <div class="match-top">
+                            <div class="match-date">Пятница | 23.01.26 | 16:00 МСК</div>
+                            <div class="match-tournament">Товарищеский матч</div>
+                        </div>
+
+                        <div class="match-content">
+                            <div class="team-name">Титаны</div>
+
+                            <div class="match-center">
+                                <img src="../images/1.png" alt="Bayern">
+                                <div class="score">2 : 2</div>
+                                <img src="../images/rodina.png" alt="Inter">
+                            </div>
+
+                            <div class="team-name team-right">Родина(Рос)</div>
+                        </div>
+                    </div>
+                    <div class="match-box">
+                        <div class="match-top">
+                            <div class="match-date">Четверг | 29.01.26 | 17:00 МСК</div>
+                            <div class="match-tournament">Товарищеский матч</div>
+                        </div>
+
+                        <div class="match-content">
+                            <div class="team-name">Титаны</div>
+
+                            <div class="match-center">
+                                <img src="../images/1.png" alt="Bayern">
+                                <div class="score">2 : 0</div>
+                                <img src="../images/ugartu.png" alt="Inter">
+                            </div>
+
+                            <div class="team-name team-right">Угарту(Арм)</div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="schedule">
+                <div id="february">
+                    <h2>Февраль</h2>
+                    <div class="match-box">
+                        <div class="match-top">
+                            <div class="match-date">Понедельник | 09.02.26 | 17:00 МСК</div>
+                            <div class="match-tournament">Товарищеский матч</div>
+                        </div>
+
+                        <div class="match-content">
+                            <div class="team-name">Титаны</div>
+
+                            <div class="match-center">
+                                <img src="../images/1.png" alt="Bayern">
+                                <div class="score">1 : 0</div>
+                                <img src="../images/profesional.png" alt="Inter">
+                            </div>
+
+                            <div class="team-name team-right">Чжэцзян Профешионал (Кит)</div>
+                        </div>
+                    </div>
+                    <div class="match-box">
+                        <div class="match-top">
+                            <div class="match-date">Среда | 18.02.26 | 15:00 МСК</div>
+                            <div class="match-tournament">Товарищеский матч</div>
+                        </div>
+
+                        <div class="match-content">
+                            <div class="team-name">Титаны</div>
+
+                            <div class="match-center">
+                                <img src="../images/1.png" alt="Bayern">
+                                <div class="score">1 : 0</div>
+                                <img src="../images/rostov.png" alt="Inter">
+                            </div>
+
+                            <div class="team-name team-right">Ростов (Рос)</div>
+                        </div>
+                    </div>
+                    <div class="match-box">
+                        <div class="match-top">
+                            <div class="match-date">Воскресенье | 22.02.26 | 18:00 МСК</div>
+                            <div class="match-tournament">Товарищеский матч</div>
+                        </div>
+
+                        <div class="match-content">
+                            <div class="team-name">Титаны</div>
+
+                            <div class="match-center">
+                                <img src="../images/1.png" alt="Bayern">
+                                <div class="score">2 : 3</div>
+                                <img src="../images/ural.png" alt="Inter">
+                            </div>
+
+                            <div class="team-name team-right">Урал (Рос)</div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="schedule">
+                <div id="march">
+                    <h2>Март</h2>
+                    <div class="match-box">
+                        <div class="match-top">
+                            <div class="match-date">Воскресенье | 01.03.26 | 14:00 МСК</div>
+                            <div class="match-tournament">Российская Премьер Лига тур 19</div>
+                        </div>
+
+                        <div class="match-content">
+                            <div class="team-name">Пари НН</div>
+
+                            <div class="match-center">
+                                <img src="../images/parinn.png" alt="Bayern">
+                                <div class="score">2 : 1</div>
+                                <img src="../images/1.png" alt="Inter">
+                            </div>
+
+                            <div class="team-name team-right">Титаны</div>
+                        </div>
+                    </div>
+                    <div class="match-box">
+                        <div class="match-top">
+                            <div class="match-date">Воскресенье | 08.03.26 | 17:30 МСК</div>
+                            <div class="match-tournament">Российская Премьер Лига тур 20</div>
+                        </div>
+
+                        <div class="match-content">
+                            <div class="team-name">Крылья Советов</div>
+
+                            <div class="match-center">
+                                <img src="../images/krylia.png" alt="Bayern">
+                                <div class="score">0 : 3</div>
+                                <img src="../images/1.png" alt="Inter">
+                            </div>
+
+                            <div class="team-name team-right">Титаны</div>
+                        </div>
+                    </div>
+                    <div class="match-box">
+                        <div class="match-top">
+                            <div class="match-date">Четверг | 12.03.26 | 18:00 МСК</div>
+                            <div class="match-tournament"> Кубок России - Плей-офф - 1/8</div>
+                        </div>
+
+                        <div class="match-content">
+                            <div class="team-name">Титаны</div>
+
+                            <div class="match-center">
+                                <img src="../images/1.png" alt="Bayern">
+                                <div class="score">3 : 4</div>
+                                <img src="../images/spartakk.png" alt="Inter">
+                            </div>
+
+                            <div class="team-name team-right">Спартак Москва</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="match-box">
+                    <div class="match-top">
+                        <div class="match-date">Понедельник | 16.03.26 | 14:00 МСК</div>    
+                        <div class="match-tournament">Российская Премьер Лига тур 21</div>
+                    </div>
+
+                    <div class="match-content">
+                        <div class="team-name">Титаны</div>
+
+                        <div class="match-center">
+                            <img src="../images/1.png" alt="Bayern">
+                            <div class="score">1 : 2</div>
+                            <img src="../images/cska.png" alt="Inter">
+                        </div>
+
+                        <div class="team-name team-right">ЦСКА</div>
+                    </div>
+                </div>
+                <div class="match-box">
+                    <div class="match-top">
+                        <div class="match-date">Вторник | 31.03.26 | 19:30 МСК</div>
+                        <div class="match-tournament">Российская Премьер Лига тур 22</div>
+                    </div>
+
+                    <div class="match-content">
+                        <div class="team-name">Титаны</div>
+
+                        <div class="match-center">
+                            <img src="../images/1.png" alt="Bayern">
+                            <div class="score">2 : 3</div>
+                            <img src="../images/rostov.png" alt="Inter">
+                        </div>
+
+                        <div class="team-name team-right">Ростов</div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="schedule">
+                <div id="april">
+                    <h2>Апрель</h2>
+                    <div class="match-box">
+                        <div class="match-top">
+                            <div class="match-date">Воскресенье | 05.04.26 | 16:00 МСК</div>
+                            <div class="match-tournament">Российская Премьер Лига тур 23</div>
+                        </div>
+
+                        <div class="match-content">
+                            <div class="team-name">Краснодар</div>
+
+                            <div class="match-center">
+                                <img src="../images/krasnodar.png" alt="Bayern">
+                                <div class="score">1 : 0</div>
+                                <img src="../images/1.png" alt="Inter">
+                            </div>
+
+                            <div class="team-name team-right">Титаны</div>
+                        </div>
+                    </div>
+                    <div class="match-box">
+                        <div class="match-top">
+                            <div class="match-date">Понедельник | 13.04.26 | 15:00 МСК</div>
+                            <div class="match-tournament">Российская Премьер Лига тур 24</div>
+                        </div>
+
+                        <div class="match-content">
+                            <div class="team-name">Титаны</div>
+
+                            <div class="match-center">
+                                <img src="../images/1.png" alt="Bayern">
+                                <div class="score">2 : 1</div>
+                                <img src="../images/fakel.png" alt="Inter">
+                            </div>
+
+                            <div class="team-name team-right">Факел</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="fixture-card">
+                    <div class="fixture-header">
+                        <span class="fixture-date">Воскресенье | 19.04.26 | 14:30 МСК</span>
+                        <span class="fixture-tournament">Российская Премьер Лига тур 25</span>
+                    </div>
+
+                    <div class="fixture-content">
+                        <span class="club-name club-left">Титаны</span>
+                        <div class="fixture-center">
+                            <img src="../images/1.png" alt="Титаны" class="club-logo" />
+                            <span class="score-separator">-</span>
+                            <img src="../images/spartakk.png" alt="Спартак Москва" class="club-logo" />
+                        </div>
+                        <span class="club-name">Спартак Москва</span>
+                    </div>
+
+                    <div class="ticket-action">
+                        <a href="../pages/tickets.html" class="ticket-link"> Купить билет</a>
+                    </div>
+                </div>
+                <div class="fixture-card">
+                    <div class="fixture-header">
+                        <span class="fixture-date">Понедельник | 27.04.26 | 16:30 МСК</span>
+                        <span class="fixture-tournament">Российская Премьер Лига тур 26</span>
+                    </div>
+
+                    <div class="fixture-content">
+                        <span class="club-name club-left">Химки</span>
+                        <div class="fixture-center">
+                            <img src="../images/khimki.png" alt="Титаны" class="club-logo" />
+                            <span class="score-separator">-</span>
+                            <img src="../images/1.png" alt="Спартак Москва" class="club-logo" />
+                        </div>
+                        <span class="club-name">Титаны</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            </div>
+            <div class="schedule">
+                <div id="may">
+                    <h2>Май</h2>
+                    <div class="fixture-card">
+                        <div class="fixture-header">
+                            <span class="fixture-date">Суббота | 02.05.26 | 18:00 МСК</span>
+                            <span class="fixture-tournament">Российская Премьер Лига тур 27</span>
+                        </div>
+    
+                        <div class="fixture-content">
+                            <span class="club-name club-left">Титаны</span>
+                            <div class="fixture-center">
+                                <img src="../images/1.png" alt="Титаны" class="club-logo" />
+                                <span class="score-separator">-</span>
+                                <img src="../images/makhachkala.png" alt="Спартак Москва" class="club-logo" />
+                            </div>
+                            <span class="club-name">Динамо Махачкала</span>
+                        </div>
+    
+                        <div class="ticket-action">
+                            <a href="../pages/ticketsDynamo.html" class="ticket-link"> Купить билет</a>
+                        </div>
+                    </div>
+                    <div class="fixture-card">
+                        <div class="fixture-header">
+                            <span class="fixture-date">Понедельник | 11.05.26 | 17:00 МСК</span>
+                            <span class="fixture-tournament">Российская Премьер Лига тур 28</span>
+                        </div>
+    
+                        <div class="fixture-content">
+                            <span class="club-name club-left">Титаны</span>
+                            <div class="fixture-center">
+                                <img src="../images/1.png" alt="Титаны" class="club-logo" />
+                                <span class="score-separator">-</span>
+                                <img src="../images/akhmat.png" alt="Спартак Москва" class="club-logo" />
+                            </div>
+                            <span class="club-name">Ахмат</span>
+                        </div>
+    
+                        <div class="ticket-action">
+                            <a href="../pages/ticketsAkmat.html" class="ticket-link"> Купить билет</a>
+                        </div>
+                    </div>
+                    <div class="fixture-card">
+                        <div class="fixture-header">
+                            <span class="fixture-date">Понедельник | 18.05.26 | 19:00 МСК</span>
+                            <span class="fixture-tournament">Российская Премьер Лига тур 29</span>
+                        </div>
+    
+                        <div class="fixture-content">
+                            <span class="club-name club-left">Динамо Москва</span>
+                            <div class="fixture-center">
+                                <img src="../images/dinamomsk.png" alt="Титаны" class="club-logo" />
+                                <span class="score-separator">-</span>
+                                <img src="../images/1.png" alt="Спартак Москва" class="club-logo" />
+                            </div>
+                            <span class="club-name">Титаны</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fixture-card">
+                    <div class="fixture-header">
+                        <span class="fixture-date">Воскресенье | 24.05.26 | 16:30 МСК</span>
+                        <span class="fixture-tournament">Российская Премьер Лига тур 30</span>
+                    </div>
+
+                    <div class="fixture-content">
+                        <span class="club-name club-left">Титаны</span>
+                        <div class="fixture-center">
+                            <img src="../images/1.png" alt="Титаны" class="club-logo" />
+                            <span class="score-separator">-</span>
+                            <img src="../images/lokomotiv.png" alt="Спартак Москва" class="club-logo" />
+                        </div>
+                        <span class="club-name">Локомотив Москва</span>
+                    </div>
+
+                    <div class="ticket-action">
+                        <a href="../pages/ticketsLokomotiv.html" class="ticket-link"> Купить билет</a>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="schedule">
+                <div id="june">
+                    <h2>Июнь</h2>
+                    <h1 style="text-align: center; margin-bottom: 30px; font-size: 23px;">Матчей не ожидается</h1>
+                </div>
+
+
+            </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-partners">
+            <h3>ПАРТНЕРЫ</h3>
+            <div class="footer-partner-logos">
+                <a href="https://www.championat.com/"><img src="../images/chempionatt.webp" alt="ladaa"></a>
+                <a href="https://www.sports.ru/"><img src="../images/sports.webp" alt="aeroflotik"></a>
+                <a href="https://railfgk.ru/"><img src="../images/fedgruzkomp.webp" alt="megafon"></a>
+                <a href="https://www.sogaz.ru/"><img src="../images/cogaz.webp" alt="wildberries"></a>
+            </div>
+        </div>
+
+
+
+        <div class="footer-socials">
+            <a href="https://vk.com/feed"><img src="../images/vk.png" alt="VK"></a>
+            <a href="https://web.telegram.org/"><img src="../images/telegram.png" alt="telegram"></a>
+            <a href="https://www.youtube.com/"><img src="../images/youtube (1).png" alt="youtube"></a>
+        </div>
+
+        <div class="footer-legal">
+            <p style="color: white; font-size: 17px;">© ФК Титаны - 2026</p>
+        </div>
+    </footer>
+    <script>
+        // Плавная прокрутка, если необходимо
+        document.querySelectorAll('.fixed-nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const target = document.querySelector(this.getAttribute('href'));
+                window.scrollTo({
+                    top: target.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const authIcon = document.getElementById("authIcon");
+            const authPopup = document.getElementById("authPopup");
+            const loginForm = document.getElementById("loginForm");
+            const registerForm = document.getElementById("registerForm");
+            const openRegister = document.getElementById("openRegister");
+            const openLogin = document.getElementById("openLogin");
+
+            authIcon.addEventListener("click", function (event) {
+                event.stopPropagation();
+                authPopup.style.display = authPopup.style.display === "block" ? "none" : "block";
+            });
+
+
+            document.addEventListener("click", function (event) {
+                if (!authPopup.contains(event.target) && event.target !== authIcon) {
+                    authPopup.style.display = "none";
+                }
+            });
+
+
+            openRegister.addEventListener("click", function (event) {
+                event.preventDefault();
+                loginForm.style.display = "none";
+                registerForm.style.display = "block";
+            });
+
+            openLogin.addEventListener("click", function (event) {
+                event.preventDefault();
+                registerForm.style.display = "none";
+                loginForm.style.display = "block";
+            });
+        });
+    </script>
+</body>
+
+</html>

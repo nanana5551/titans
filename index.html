@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Футбольный клуб Титаны</title>
+    <link rel="stylesheet" href="./style/styles.css">
+    <link rel="icon" type="image/png" href="images/akron.png">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="./images/1.png" alt="FC Titans">
+            <h1 class="club-name">Титаны</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Главная</a></li>
+                <li><a href="./pages/club.html">Клуб</a></li>
+                <li><a href="./pages/team.html">Команда</a></li>
+                <li><a href="./pages/tamaev.html">Матчи</a></li>
+                <li><a href="./pages/news.html">Новости</a></li>
+                <li><a href="./pages/shop.html">Магазин</a></li>
+                <li><a href="./pages/table.html">Таблица РПЛ</a></li>
+            </ul>
+        </nav>
+        <a href="./pages/shop.html">
+        <div class="header-actions">
+            <div class="cart-icon" onclick="toggleCart()">🛒 <span id="cartCount">0</span></div>
+        </a>
+            <a href="./pages/account.html" class="avatar-link">
+              <img src="./images/user-interface.png" alt="Личный кабинет" class="avatar" />
+            </a>
+          </div>
+    </header>
+    
+
+    <section class="hero">
+        <h1>Добро пожаловать в ФК Титаны</h1>
+        <p>Вперёд, к новым победам!</p>
+        <a href="./pages/team.html" class="btn">Узнать больше о команде</a>
+    </section>
+    <div class="news-slider">
+        <a href="./pages/news.html" class="news-link">
+            <div class="news-item" style="background-image: url('images/alexeivlasov.jpg');">
+                <div class="news-content">
+                    <h3>Алексей Власов покинет "Титаны" летом</h3>
+                    <p>Генеральный директор завершит работу в клубе в конце июля 2026 года</p>
+                </div>
+            </div>
+        </a>
+    
+        <a href="./pages/news.html" class="news-link">
+            <div class="news-item" style="background-image: url('images/3-459-600x400.jpg');">
+                <div class="news-content">
+                    <h3>"Титаны" - "Факел"</h3>
+                    <p>Победа в сложном матче</p>
+                </div>
+            </div>
+        </a>
+    
+        <a href="./pages/tamaev.html" class="news-link">
+            <div class="news-item" style="background-image: url('images/4z6a8983-600x400.jpg');">
+                <div class="news-content">
+                    <h3>Следующий матч</h3>
+                    <p>Следующий матч против московского "Спартака"</p>
+                </div>
+            </div>
+        </a>
+    
+        <a href="./pages/tickets.html" class="news-link">
+            <div class="news-item" style="background-image: url('images/dsc01368-600x400.jpg');">
+                <div class="news-content">
+                    <h3>Открыта продажа билетов</h3>
+                    <p>Продажа билетов на матч "Титаны" и "Спартак"</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    
+
+    <!-- Новости -->
+
+    <section class="news-section">
+        <h2 class="news-title">НОВОСТИ</h2>
+    
+        <div class="news-grid">
+            <a href="./pages/news.html" class="news-link">
+                <div class="news-card">
+                    <img src="./images/200match.jpg" alt="Пресс-конференция">
+                    <div class="news-info">
+                        <span class="news-category"></span>
+                        <h3 class="news-headline">Сергей Волков сыграл 200-й матч за «Титаны»</h3>
+                    </div>
+                </div>
+            </a>
+        
+            <a href="./pages/news.html" class="news-link">
+                <div class="news-card">
+                    <img src="images/danilin.png" alt="Болельщики на тренировке">
+                    <div class="news-info">
+                        <span class="news-category"></span>
+                        <h3 class="news-headline">Кирилл Данилин признан игроком месяца</h3>
+                    </div>
+                </div>
+            </a>
+        
+            <a href="./pages/news.html" class="news-link">
+                <div class="news-card">
+                    <img src="images/5-122-600x400.jpg" alt="Открытая тренировка">
+                    <div class="news-info">
+                        <span class="news-category red"></span>
+                        <h3 class="news-headline">Новый нападающий из Бразилии подпишет контракт с клубом</h3>
+                    </div>
+                </div>
+            </a>
+        
+            <a href="./pages/news.html" class="news-link">
+                <div class="news-card">
+                    <img src="images/5388822018511726223-600x400.jpg" alt="Фотогалерея">
+                    <div class="news-info">
+                        <span class="news-category blue"></span>
+                        <h3 class="news-headline">"Титаны" объявили о строительстве новой тренировочной базы</h3>
+                    </div>
+                </div>
+            </a>
+        
+            <a href="./pages/news.html" class="news-link">
+                <div class="news-card">
+                    <img src="images/savichev.png" alt="Герберт Хайнер">
+                    <div class="news-info">
+                        <span class="news-category red"></span>
+                        <h3 class="news-headline">Защитник Константин Савичев получил вызов в сборную России</h3>
+                    </div>
+                </div>
+            </a>
+        
+            <a href="./pages/news.html" class="news-link">
+                <div class="news-card">
+                    <img src="images/5-34-600x400.jpg" alt="Герберт Хайнер">
+                    <div class="news-info">
+                        <span class="news-category red"></span>
+                        <h3 class="news-headline">На матче со "Спартаком" ожидается аншлаг</h3>
+                    </div>
+                </div>
+            </a>
+        
+            <a href="./pages/news.html" class="news-link">
+                <div class="news-card">
+                    <img src="images/4z6a6549-600x406.jpg" alt="Герберт Хайнер">
+                    <div class="news-info">
+                        <span class="news-category red"></span>
+                        <h3 class="news-headline">Полузащитник Владимир Хубулов выбыл на 3 недели из-за травмы</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+    </section>
+
+    <section class="club-section">
+        <h2 class="club-title">КЛУБ</h2>
+        <div class="club-grid">
+            <a href="./pages/club.html" class="club-link">
+                <div class="club-card">
+                    <img src="images/2018.jpg" alt="Стадион Баварии">
+                    <div class="club-info">
+                        <span class="club-category red">История</span>
+                        <h3 class="club-headline">История создания команды</h3>
+                    </div>
+                </div>
+            </a>
+    
+            <a href="./pages/club.html" class="club-link">
+                <div class="club-card">
+                    <img src="images/2021.jpg" alt="История клуба">
+                    <div class="club-info">
+                        <span class="club-category blue">О клубе</span>
+                        <h3 class="club-headline">О клубе в двух словах</h3>
+                    </div>
+                </div>
+            </a>
+    
+            <a href="./pages/club.html" class="club-link">
+                <div class="club-card">
+                    <img src="images/stadion.jpg" alt="Фанаты">
+                    <div class="club-info">
+                        <span class="club-category pink">Стадион и контакты</span>
+                        <h3 class="club-headline">Где находится стадион, контактная линия</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+    
+    
+    
+    
+    
+
+
+    <section class="trophies">
+        <h2>Наши трофеи</h2>
+        <div class="trophies-container">
+            <div class="trophy-item">
+                <img src="./images/ec_pokalsieger.avif" alt="Кубок России">
+                <h3>Кубок России</h3>
+                <p> Побед: 1</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-partners">
+            <h3>ПАРТНЕРЫ</h3>
+            <div class="footer-partner-logos">
+                <a href="https://www.championat.com/"><img src="images/chempionatt.webp" alt="ladaa"></a>
+                <a href="https://www.sports.ru/"><img src="images/sports.webp" alt="aeroflotik"></a>
+                <a href="https://railfgk.ru/"><img src="images/fedgruzkomp.webp" alt="megafon"></a>
+                <a href="https://www.sogaz.ru/"><img src="images/cogaz.webp" alt="wildberries"></a>
+            </div>
+        </div>
+    
+       
+    
+        <div class="footer-socials">
+            <a href="https://vk.com/feed"><img src="images/vk.png" alt="VK"></a>
+            <a href="https://web.telegram.org/"><img src="images/telegram.png" alt="telegram"></a>
+            <a href="https://www.youtube.com/"><img src="images/youtube (1).png" alt="youtube"></a>
+        </div>
+    
+        <div class="footer-legal">
+            <p>© ФК Титаны - 2026</p>
+        </div>
+    </footer>
+    <script>
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addToCart(name, price) {
+  cart.push({ name, price });
+  updateCart();
+}
+
+function updateCart() {
+  const cartItems = document.getElementById("cartItems");
+  const totalPrice = document.getElementById("totalPrice");
+  const cartCount = document.getElementById("cartCount");
+
+  cartItems.innerHTML = "";
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    const li = document.createElement("li");
+    li.textContent = `${item.name} — ${item.price}₽`;
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "Удалить";
+    removeBtn.onclick = () => {
+      cart.splice(index, 1);
+      updateCart();
+    };
+    li.appendChild(removeBtn);
+    cartItems.appendChild(li);
+    total += item.price;
+  });
+
+  totalPrice.textContent = total;
+  cartCount.textContent = cart.length;
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function toggleCart() {
+  document.getElementById("cart").classList.toggle("hidden");
+}
+
+function checkout() {
+  if (cart.length === 0) return alert("Корзина пуста");
+  document.getElementById("checkoutForm").classList.remove("hidden");
+}
+
+function completeOrder(e) {
+  e.preventDefault();
+  const name = document.getElementById("orderName").value.trim();
+  const address = document.getElementById("orderAddress").value.trim();
+  const orderId = "TIT" + Date.now();
+
+  const order = {
+    id: orderId,
+    name,
+    address,
+    items: cart,
+    total: cart.reduce((sum, item) => sum + item.price, 0)
+  };
+
+  let orders = JSON.parse(localStorage.getItem("orders")) || [];
+  orders.push(order);
+  localStorage.setItem("orders", JSON.stringify(orders));
+
+  alert(`Заказ оформлен!\nНомер: ${orderId}\nИмя: ${name}\nАдрес: ${address}`);
+  cart = [];
+  updateCart();
+  document.getElementById("checkoutForm").classList.add("hidden");
+  localStorage.removeItem("cart");
+}
+
+
+
+        
+    </script>
+</body>
+</html>

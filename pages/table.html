@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таблица РПЛ</title>
+    <link rel="stylesheet" href="../style/table.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+          <img src="../images/1.png" alt="FC Titans" />
+          <h1 class="club-name"><a href="../index.html">Титаны</a></h1>
+        </div>
+        <nav>
+            <ul>
+              <li><a href="../index.html">Главная</a></li>
+              <li><a href="../pages/club.html">Клуб</a></li>
+              <li><a href="../pages/team.html">Команда</a></li>
+              <li><a href="../pages/tamaev.html">Матчи</a></li>
+              <li><a href="../pages/news.html">Новости</a></li>
+              <li><a href="shop.html" class="active">Магазин</a></li>
+              <li><a href="../pages/table.html">Таблица РПЛ</a></li>
+            </ul>
+          </nav>
+        
+          <div class="header-actions">
+            <a href="../pages/shop.html">
+            <div class="cart-icon" onclick="toggleCart()">🛒 <span id="cartCount">0</span></div></a>
+            <a href="account.html" class="avatar-link">
+              <img src="../images/user-interface.png" alt="Личный кабинет" class="avatar" />
+            </a>
+          </div>
+      </header>
+
+    <div class="container">
+        <h1>Таблица Российская Премьер-Лига</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Место</th>
+                    <th>Команда</th>
+                    <th>Игры</th>
+                    <th>Победы</th>
+                    <th>Ничьи</th>
+                    <th>Поражения</th>
+                    <th>Забитые</th>
+                    <th>Пропущенные</th>
+                    <th>Очки</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Строки для команд -->
+                <tr>
+                    <td>1</td>
+                    <td class="team-name"><img src="../images/krasnodar.png" class="team-logo" alt="Зенит">"Краснодар" Краснодар</td>
+                    <td>24</td>
+                    <td>15</td>
+                    <td>7</td>
+                    <td>2</td>
+                    <td>46</td>
+                    <td>17</td>
+                    <td class="points">52</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td class="team-name"><img src="../images/zzz.png" class="team-logo" alt="Локомотив">"Зенит" Санкт-Петербург</td>
+                    <td>24</td>
+                    <td>15</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>49</td>
+                    <td>16</td>
+                    <td class="points">50</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td class="team-name"><img src="../images/spartakk.png" class="team-logo" alt="Спартак">"Спартак" Москва</td>
+                    <td>24</td>
+                    <td>14</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>45</td>
+                    <td>19</td>
+                    <td class="points">47</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td class="team-name"><img src="../images/cska.png" class="team-logo" alt="ЦСКА">"ЦСКА" Москва</td>
+                    <td>24</td>
+                    <td>14</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>38</td>
+                    <td>16</td>
+                    <td class="points">47</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td class="team-name"><img src="../images/dinamomsk.png" class="team-logo" alt="Рубин">"Динамо" Москва</td>
+                    <td>24</td>
+                    <td>12</td>
+                    <td>7</td>
+                    <td>5</td>
+                    <td>50</td>
+                    <td>28</td>
+                    <td class="points">43</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td class="team-name"><img src="../images/lokomotiv.png" class="team-logo" alt="Ростов">"Локомотив" Москва</td>
+                    <td>24</td>
+                    <td>12</td>
+                    <td>5</td>
+                    <td>7</td>
+                    <td>39</td>
+                    <td>36</td>
+                    <td class="points">41</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td class="team-name"><img src="../images/rostov.png" class="team-logo" alt="Арсенал">"Ростов" Ростов-на-Дону</td>
+                    <td>24</td>
+                    <td>10</td>
+                    <td>6</td>
+                    <td>8</td>
+                    <td>31</td>
+                    <td>34</td>
+                    <td class="points">36</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td class="team-name"><img src="../images/rubin.png" class="team-logo" alt="Краснодар">"Рубин" Казань</td>
+                    <td>24</td>
+                    <td>9</td>
+                    <td>6</td>
+                    <td>9</td>
+                    <td>36</td>
+                    <td>38</td>
+                    <td class="points">33</td>
+                </tr>
+                <tr class="titans-row">
+                    <td>9</td>
+                    <td class="team-name"><img src="../images/akron.png" class="team-logo" alt="Урал">"Титаны" Москва</td>
+                    <td>24</td>
+                    <td>9</td>
+                    <td>3</td>
+                    <td>12</td>
+                    <td>30</td>
+                    <td>40</td>
+                    <td class="points">30</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td class="team-name"><img src="../images/makhachkala.png" class="team-logo" alt="Сочи">"Динамо" Махачкала</td>
+                    <td>24</td>
+                    <td>6</td>
+                    <td>9</td>
+                    <td>9</td>
+                    <td>22</td>
+                    <td>26</td>
+                    <td class="points">27</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td class="team-name"><img src="../images/krylia.png" class="team-logo" alt="Мордовия">"Крылья Советов" Самара</td>
+                    <td>24</td>
+                    <td>7</td>
+                    <td>5</td>
+                    <td>12</td>
+                    <td>29</td>
+                    <td>39</td>
+                    <td class="points">26</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td class="team-name"><img src="../images/khimki.png" class="team-logo" alt="Оренбург">"Химки" Химки</td>
+                    <td>24</td>
+                    <td>5</td>
+                    <td>8</td>
+                    <td>11</td>
+                    <td>28</td>
+                    <td>44</td>
+                    <td class="points">23</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td class="team-name"><img src="../images/parinn.png" class="team-logo" alt="Крылья Советов">"Пари НН" Нижний Новгород</td>
+                    <td>24</td>
+                    <td>4</td>
+                    <td>11</td>
+                    <td>9</td>
+                    <td>22</td>
+                    <td>36</td>
+                    <td class="points">23</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td class="team-name"><img src="../images/akhmat.png" class="team-logo" alt="Торпедо">"Ахмат" Грозный</td>
+                    <td>24</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>14</td>
+                    <td>19</td>
+                    <td>44</td>
+                    <td class="points">20</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td class="team-name"><img src="../images/fakel.png" class="team-logo" alt="Спартак Владикавказ">"Факел" Воронеж</td>
+                    <td>24</td>
+                    <td>2</td>
+                    <td>9</td>
+                    <td>13</td>
+                    <td>11</td>
+                    <td>35</td>
+                    <td class="points">15</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td class="team-name"><img src="../images/orenburg.png" class="team-logo" alt="Сибирь">"Оренбург" Оренбург</td>
+                    <td>24</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>16</td>
+                    <td>21</td>
+                    <td>45</td>
+                    <td class="points">14</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <footer>
+        <div class="footer-partners">
+          <h3>ПАРТНЕРЫ</h3>
+          <div class="footer-partner-logos">
+            <a href="https://www.championat.com/"><img src="../images/chempionatt.webp" alt=""></a>
+            <a href="https://www.sports.ru/"><img src="../images/sports.webp" alt=""></a>
+            <a href="https://railfgk.ru/"><img src="../images/fedgruzkomp.webp" alt=""></a>
+            <a href="https://www.sogaz.ru/"><img src="../images/cogaz.webp" alt=""></a>
+          </div>
+        </div>
+    
+        <div class="footer-socials">
+          <a href="https://vk.com/feed"><img src="../images/vk.png" alt="VK" /></a>
+          <a href="https://web.telegram.org/"><img src="../images/telegram.png" alt="telegram" /></a>
+          <a href="https://www.youtube.com/"><img src="../images/youtube (1).png" alt="youtube" /></a>
+        </div>
+    
+        <div class="footer-legal">
+          <p style="color: white; font-size: 17px;">© ФК Титаны - 2026</p>
+        </div>
+      </footer>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const authIcon = document.getElementById("authIcon");
+            const authPopup = document.getElementById("authPopup");
+            const loginForm = document.getElementById("loginForm");
+            const registerForm = document.getElementById("registerForm");
+            const openRegister = document.getElementById("openRegister");
+            const openLogin = document.getElementById("openLogin");
+    
+            authIcon.addEventListener("click", function (event) {
+                event.stopPropagation();
+                authPopup.style.display = authPopup.style.display === "block" ? "none" : "block";
+            });
+    
+
+            document.addEventListener("click", function (event) {
+                if (!authPopup.contains(event.target) && event.target !== authIcon) {
+                    authPopup.style.display = "none";
+                }
+            });
+    
+
+            openRegister.addEventListener("click", function (event) {
+                event.preventDefault();
+                loginForm.style.display = "none";
+                registerForm.style.display = "block";
+            });
+
+            openLogin.addEventListener("click", function (event) {
+                event.preventDefault();
+                registerForm.style.display = "none";
+                loginForm.style.display = "block";
+            });
+        });
+
+      </script>
+</body>
+</html>

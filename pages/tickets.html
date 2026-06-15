@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Купить билет на матч</title>
+  <link rel="icon" type="image/png" href="../images/1.png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .match-info {
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+
+    .match-info h2 {
+      margin-bottom: 10px;
+    }
+
+    .teams {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .teams img {
+      width: 60px;
+      height: 60px;
+    }
+
+    .form-section {
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    select,
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .btn-purchase {
+      display: block;
+      width: 100%;
+      background-color: #c60428;
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .btn-purchase:hover {
+      background-color: #a70321;
+    }
+
+    .message, .receipt {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #e6ffe6;
+      color: #076607;
+      border: 1px solid #76c576;
+      border-radius: 8px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .price-display {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      margin-top: -10px;
+      margin-bottom: 20px;
+    }
+
+    #payment-section {
+      display: none;
+      margin-top: 30px;
+      border-top: 1px dashed #ccc;
+      padding-top: 20px;
+    }
+
+    .receipt {
+      background-color: #f1f1f1;
+      color: #333;
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-top: 20px;
+    }
+header {
+    background-color: #c60428;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.club-name {
+    font-size: 26px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.club-name a{
+    font-size: 26px;
+    text-decoration: none;
+    color: white;
+}
+
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+    padding-right: 20px;
+}
+
+.cart-icon {
+    cursor: pointer;
+    font-size: 20px;
+    background: white;
+    color: #c60428;
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+.avatar-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.auth-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.auth-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.auth-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.auth-popup {
+    display: none;
+    position: absolute;
+    right: 50px;
+    top: 70px;
+    background: white;
+    color: black;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    z-index: 100;
+}
+
+.auth-popup input {
+    width: 100%;
+    padding: 7px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.auth-popup .login-btn,
+.auth-popup .register-btn {
+    width: 100%;
+    background: #c60428;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.auth-popup .login-btn:hover,
+.auth-popup .register-btn:hover {
+    background: #a30322;
+}
+
+.auth-popup p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.auth-popup a {
+    color: #c60428;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-popup a:hover {
+    text-decoration: underline;
+}
+.footer-partners h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer-partner-logos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.footer-partner-logos img {
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.footer-section {
+    margin: 0 20px;
+}
+
+.footer-section h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-socials {
+    margin-top: 20px;
+}
+
+.footer-socials a img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+.footer-legal {
+    margin-top: 20px;
+    font-size: 17px;
+    color: white;
+}
+
+.footer-legal a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-legal a:hover {
+    text-decoration: underline;
+}
+footer {
+    background-color: #c60428;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative; 
+    z-index: 10; 
+}
+
+.partners, .social-media {
+    margin-bottom: 20px;
+}
+
+.partners h3, .social-media h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.partners-logos, .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.partners-logos img {
+    height: 50px;
+    width: auto;
+}
+
+.social-icons a img {
+    height: 40px;
+    width: 40px;
+    transition: transform 0.3s;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 900px) {
+    header {
+        padding: 16px;
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px 12px;
+        padding: 0;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    .header-actions {
+        margin-left: 0;
+        padding-right: 0;
+        justify-content: center;
+    }
+
+    .auth-icon {
+        margin: 0 auto;
+    }
+
+    .container {
+        width: calc(100% - 24px);
+        margin: 20px auto;
+        padding: 18px;
+    }
+
+    .teams {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .team {
+        flex: 1 1 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .club-name,
+    .club-name a {
+        font-size: 22px;
+    }
+
+    body > h1 {
+        font-size: 24px;
+        padding: 0 12px;
+    }
+
+    .teams {
+        font-size: 15px;
+    }
+}
+
+.header-actions a,
+.header-actions a:hover,
+.header-actions a:focus,
+header > a,
+header > a:hover,
+header > a:focus {
+    text-decoration: none;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <img src="../images/1.png" alt="FC Titans">
+        <h1 class="club-name"><a href="../index.html">Титаны</a></h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="../pages/club.html">Клуб</a></li>
+            <li><a href="../pages/team.html">Команда</a></li>
+            <li><a href="../pages/tamaev.html">Матчи</a></li>
+            <li><a href="../pages/news.html">Новости</a></li>
+            <li><a href="../pages/shop.html">Магазин</a></li>
+            <li><a href="../pages/table.html">Таблица РПЛ</a></li>
+        </ul>
+    </nav>
+    <div class="header-actions">
+        <a href="../pages/shop.html">
+            <div class="cart-icon">🛒 <span id="cartCount">0</span></div>
+        </a>
+        <a href="account.html" class="avatar-link">
+            <img src="../images/user-interface.png" alt="Личный кабинет" class="avatar" />
+        </a>
+    </div>
+  </header>
+  <h1 style="text-align: center;">Покупка билетов на матч</h1>
+
+  <div class="container">
+    <div class="match-info">
+      <h2>Купить билет на матч</h2>
+      <p><strong>Воскресенье, 19 апреля 2026 — 14:30 МСК</strong></p>
+      <p>Российская Премьер Лига, Тур 25</p>
+      <div class="teams">
+        <div class="team">
+          <img src="../images/1.png" alt="Титаны" />
+          <p>Титаны</p>
+        </div>
+        <span>vs</span>
+        <div class="team">
+          <img src="../images/spartakk.png" alt="Спартак" />
+          <p>Спартак Москва</p>
+        </div>
+      </div>
+    </div>
+
+    <form id="ticketForm">
+      <div class="form-section">
+        <label for="section">Выберите сектор стадиона:</label>
+        <select id="section" required>
+          <option value="">-- Выберите --</option>
+          <option value="A">Сектор A (Центральная трибуна)</option>
+          <option value="B">Сектор B (Восточная трибуна)</option>
+          <option value="C">Сектор C (Гостевой сектор)</option>
+        </select>
+      </div>
+
+      <div class="form-section">
+        <label for="quantity">Количество билетов:</label>
+        <select id="quantity" required>
+          <option value="">-- Выберите --</option>
+          <option value="1">1 билет</option>
+          <option value="2">2 билета</option>
+          <option value="3">3 билета</option>
+          <option value="4">4 билета</option>
+        </select>
+      </div>
+
+      <div class="form-section">
+        <label for="name">Ваше имя:</label>
+        <input type="text" id="name" placeholder="Иван Иванов" required />
+      </div>
+
+      <div class="form-section">
+        <label for="email">Email для получения билета:</label>
+        <input type="email" id="email" placeholder="example@mail.ru" required />
+      </div>
+
+      <div class="price-display" id="priceDisplay">Стоимость: —</div>
+
+      <button type="submit" class="btn-purchase">🎟 Оформить билет</button>
+    </form>
+
+    <div id="payment-section">
+      <h3>💳 Введите данные карты</h3>
+      <label>Номер карты:</label>
+      <input type="text" placeholder="0000 0000 0000 0000" />
+
+      <label>Имя на карте:</label>
+      <input type="text" placeholder="IVAN IVANOV" />
+
+      <label>Срок действия (MM/YY):</label>
+      <input type="text" placeholder="12/25" />
+
+      <label>CVV:</label>
+      <input type="text" placeholder="123" />
+
+      <button class="btn-purchase" onclick="generateReceipt()">💰 Оплатить</button>
+    </div>
+
+    <div class="receipt" id="receipt"></div>
+  </div>
+  <footer>
+    <div class="footer-partners">
+        <h3>ПАРТНЕРЫ</h3>
+        <div class="footer-partner-logos">
+            <a href="https://www.championat.com/"><img src="../images/chempionatt.webp" alt="ladaa"></a>
+            <a href="https://www.sports.ru/"><img src="../images/sports.webp" alt="aeroflotik"></a>
+            <a href="https://railfgk.ru/"><img src="../images/fedgruzkomp.webp" alt="megafon"></a>
+            <a href="https://www.sogaz.ru/"><img src="../images/cogaz.webp" alt="wildberries"></a>
+        </div>
+    </div>
+
+   
+
+    <div class="footer-socials">
+        <a href="https://vk.com/feed"><img src="../images/vk.png" alt="VK"></a>
+        <a href="https://web.telegram.org/"><img src="../images/telegram.png" alt="telegram"></a>
+        <a href="https://www.youtube.com/"><img src="../images/youtube (1).png" alt="youtube"></a>
+    </div>
+
+    <div class="footer-legal">
+        <p style="color: white;">© ФК Титаны - 2026</p>
+    </div>
+</footer>
+  
+
+  <script>
+    const form = document.getElementById('ticketForm');
+    const priceDisplay = document.getElementById('priceDisplay');
+    const section = document.getElementById('section');
+    const quantity = document.getElementById('quantity');
+    const paymentSection = document.getElementById('payment-section');
+    const receipt = document.getElementById('receipt');
+
+    const prices = {
+      A: 1500,
+      B: 1000,
+      C: 1000
+    };
+
+    let totalPrice = 0;
+
+    function updatePrice() {
+      const selectedSection = section.value;
+      const selectedQuantity = parseInt(quantity.value);
+      if (prices[selectedSection] && selectedQuantity) {
+        totalPrice = prices[selectedSection] * selectedQuantity;
+        priceDisplay.textContent = `Стоимость: ${totalPrice} ₽`;
+      } else {
+        priceDisplay.textContent = 'Стоимость: —';
+      }
+    }
+
+    section.addEventListener('change', updatePrice);
+    quantity.addEventListener('change', updatePrice);
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!isLoggedIn()) {
+        alert("Чтобы купить билет, войдите в аккаунт или зарегистрируйтесь.");
+        window.location.href = "login.html";
+        return;
+      }
+      if (totalPrice > 0) {
+        form.style.display = "none";
+        paymentSection.style.display = "block";
+      }
+    });
+
+    function generateReceipt() {
+  if (!isLoggedIn()) {
+    alert("Чтобы купить билет, войдите в аккаунт или зарегистрируйтесь.");
+    window.location.href = "login.html";
+    return;
+  }
+  const ticketNumber = 'T' + Math.floor(10000000 + Math.random() * 90000000); // Пример: T12345678
+  saveTicketOrder(ticketNumber);
+
+  receipt.style.display = "block";
+  receipt.innerHTML = `
+    <h3>🧾 Электронный чек</h3>
+    <p><strong>Номер билета:</strong> ${ticketNumber}</p>
+    <p>Имя: ${document.getElementById('name').value}</p>
+    <p>Email: ${document.getElementById('email').value}</p>
+    <p>Сектор: ${section.options[section.selectedIndex].text}</p>
+    <p>Количество билетов: ${quantity.value}</p>
+    <p><strong>Итого: ${totalPrice} ₽</strong></p>
+    <p>Спасибо за покупку! Билет будет отправлен на вашу почту.</p>
+  `;
+  paymentSection.style.display = "none";
+}
+
+function saveTicketOrder(ticketNumber) {
+  const selectedSection = section.options[section.selectedIndex].text;
+  const ticketQuantity = quantity.value;
+  const matchTitle = getMatchTitle();
+  const order = {
+    id: ticketNumber,
+    name: document.getElementById('name').value.trim(),
+    address: localStorage.getItem("email") || document.getElementById('email').value.trim(),
+    items: [
+      {
+        name: `Билет на матч ${matchTitle} (${selectedSection}, ${ticketQuantity} шт.)`,
+        price: totalPrice
+      }
+    ],
+    total: totalPrice
+  };
+
+  const ordersKey = getOrdersKey();
+  const orders = JSON.parse(localStorage.getItem(ordersKey)) || [];
+  orders.push(order);
+  localStorage.setItem(ordersKey, JSON.stringify(orders));
+}
+
+function getMatchTitle() {
+  const teams = Array.from(document.querySelectorAll(".team p")).map(team => team.textContent.trim());
+  return teams.join(" - ");
+}
+
+function isLoggedIn() {
+  return localStorage.getItem("loggedIn") === "true";
+}
+
+function getOrdersKey() {
+  const email = (localStorage.getItem("email") || "").trim().toLowerCase();
+  return email ? `orders_${email}` : "orders_guest";
+}
+document.addEventListener("DOMContentLoaded", function () {
+            const authIcon = document.getElementById("authIcon");
+            const authPopup = document.getElementById("authPopup");
+            const loginForm = document.getElementById("loginForm");
+            const registerForm = document.getElementById("registerForm");
+            const openRegister = document.getElementById("openRegister");
+            const openLogin = document.getElementById("openLogin");
+            if (!authIcon || !authPopup || !loginForm || !registerForm || !openRegister || !openLogin) return;
+    
+            authIcon.addEventListener("click", function (event) {
+                event.stopPropagation();
+                authPopup.style.display = authPopup.style.display === "block" ? "none" : "block";
+            });
+    
+
+            document.addEventListener("click", function (event) {
+                if (!authPopup.contains(event.target) && event.target !== authIcon) {
+                    authPopup.style.display = "none";
+                }
+            });
+    
+
+            openRegister.addEventListener("click", function (event) {
+                event.preventDefault();
+                loginForm.style.display = "none";
+                registerForm.style.display = "block";
+            });
+
+            openLogin.addEventListener("click", function (event) {
+                event.preventDefault();
+                registerForm.style.display = "none";
+                loginForm.style.display = "block";
+            });
+        });
+
+  </script>
+
+</body>
+</html>

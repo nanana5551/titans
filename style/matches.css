@@ -1,0 +1,274 @@
+/* Основные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #E6E6E6;
+    font-weight: 600;
+}
+
+header {
+    background-color: #c60428;
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    position: fixed;
+    top: 0;
+    width: 100%; 
+    z-index: 1000; 
+}
+
+header .logo img {
+    width: 150px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    background: url('images/hero-background.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 150px 0;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hero .btn {
+    background-color: #d60000;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.hero .btn:hover {
+    background-color: #c20000;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.team .player {
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+}
+
+.team img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+.matches {
+    text-align: center;
+}
+
+.matches h2 {
+    font-size: 28px;
+    color: #e4002b;
+    margin-bottom: 20px;
+}
+
+.match-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.match {
+    width: 1500px;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.match-details h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.match-details .opponent {
+    font-size: 18px;
+    color: #666;
+}
+
+.match-details .opponent img{
+    max-width: 30px;
+    max-height: 30px;
+    align-items: center;
+}
+
+.match-details .score {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e4002b;
+}
+
+nav ul {
+    display: flex;
+    gap: 50px;
+   
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.pipa{
+    font-size: 22px;
+    margin-left: 380px;
+}
+
+.opponents{
+    font-size: 35px;
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    margin-right: 1500px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    
+}
+
+@media (max-width: 900px) {
+  header {
+    position: static;
+    padding: 16px;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  header .logo img {
+    width: 70px;
+  }
+
+  header nav {
+    width: 100%;
+  }
+
+  header nav ul,
+  nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+  }
+
+  header nav ul li a,
+  nav ul li a {
+    font-size: 16px;
+  }
+
+  .hero {
+    padding: 80px 16px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  main {
+    padding: 16px;
+  }
+
+  .match {
+    width: 100%;
+  }
+
+  .pipa,
+  .opponents {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .opponents {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .match-details h3 {
+    font-size: 18px;
+  }
+}

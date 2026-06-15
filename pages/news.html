@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости ФК "Титаны"</title>
+    <link rel="stylesheet" href="../style/news.css">
+    <link rel="icon" type="image/png" href="../images/akron.png">
+</head>
+<body>
+    <header>
+      <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    background: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #c60428;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.club-name {
+    font-size: 26px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.club-name a{
+    font-size: 26px;
+    text-decoration: none;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #c60428;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative; 
+    z-index: 10; 
+}
+
+.partners, .social-media {
+    margin-bottom: 20px;
+}
+
+.partners h3, .social-media h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.partners-logos, .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.partners-logos img {
+    height: 50px;
+    width: auto;
+}
+
+.social-icons a img {
+    height: 40px;
+    width: 40px;
+    transition: transform 0.3s;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.1);
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo {
+        width: 40px;
+    }
+
+    nav ul {
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+}
+
+.footer-partners h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer-partner-logos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.footer-partner-logos img {
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.footer-section {
+    margin: 0 20px;
+}
+
+.footer-section h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-socials {
+    margin-top: 20px;
+}
+
+.footer-socials a img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+.footer-legal {
+    margin-top: 20px;
+    font-size: 17px;
+    color: white;
+}
+
+.footer-legal a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-legal a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+    header {
+        padding: 16px;
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px 12px;
+        padding: 0;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    .header-actions {
+        margin: 0 auto;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .club-name,
+    .club-name a {
+        font-size: 22px;
+    }
+}
+
+.header-actions a,
+.header-actions a:hover,
+.header-actions a:focus,
+header > a,
+header > a:hover,
+header > a:focus {
+    text-decoration: none;
+}
+      </style>
+        <div class="logo">
+            <img src="../images/1.png" alt="FC Titans">
+            <h1 class="club-name"><a href="../index.html">Титаны</a></h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="../pages/club.html">Клуб</a></li>
+            <li><a href="../pages/team.html">Команда</a></li>
+            <li><a href="../pages/tamaev.html">Матчи</a></li>
+            <li><a href="../pages/news.html">Новости</a></li>
+            <li><a href="shop.html" class="active">Магазин</a></li>
+            <li><a href="../pages/table.html">Таблица РПЛ</a></li>
+          </ul>
+        </nav>
+      
+        <div class="header-actions">
+          <a href="../pages/shop.html">
+          <div class="cart-icon" onclick="toggleCart()">🛒 <span id="cartCount">0</span></div></a>
+          <a href="account.html" class="avatar-link">
+            <img src="../images/user-interface.png" alt="Личный кабинет" class="avatar" />
+          </a>
+        </div>
+    </header>
+
+    <main>
+        <h1 style="font-size: 25px; color: black; text-align: center; margin-top: 20px; margin-bottom: 20px;">Новости</h1>
+        <div class="news-container">
+
+            <!-- Новость 1 -->
+            <div class="news-item">
+              <div class="news-img">
+                <img src="../images/2-3-e1741954869974-1200x800.jpg" alt="Дзюба">
+              </div>
+              <div class="news-content">
+                <div class="news-title">"Титаны" выиграли последний матч против "Факела" со счётом 2:1</div>
+                <div class="news-text">Команда показала отличную игру на домашнем стадионе. Особенно отличился нападающий Холодов с дублем.</div>
+                <div class="news-date">13 апреля 2026 в 19:00</div>
+              </div>
+              <div class="news-meta">
+                <div class="tag">Событие</div>
+                <div class="hashtags">#Победа</div>
+              </div>
+            </div>
+        
+            <!-- Новость 2 -->
+            <div class="news-item">
+              <div class="news-img">
+                <img src="../images/200match.jpg" alt="Волков">
+              </div>
+              <div class="news-content">
+                <div class="news-title">Сергей Волков сыграл 200-й матч за «Титаны»</div>
+                <div class="news-text">Сергей является единственным действующим игроком команды, который принял участие в первом матче клуба в истории.</div>
+                <div class="news-date">13 апреля 2026 в 18:53</div>
+              </div>
+              <div class="news-meta">
+                <div class="tag">Событие</div>
+                <div class="hashtags">#ВолковС<br>23 тур (МИР РПЛ 2024/25)</div>
+              </div>
+            </div>
+        
+            <!-- Новость 3 -->
+            <div class="news-item">
+              <div class="news-img">
+                <img src="../images/danilin.png" alt="Матч Титанов">
+              </div>
+              <div class="news-content">
+                <div class="news-title">Кирилл Данилин признан игроком месяца</div>
+                <div class="news-text">За 5 матчей полузащитник отдал 4 голевые передачи и забил 2 мяча.
+                </div>
+                <div class="news-date">12 апреля 2026 в 18:00</div>
+              </div>
+              <div class="news-meta">
+                <div class="tag">Анонс</div>
+                <div class="hashtags">#Титаны<br>#Чемпионат</div>
+              </div>
+            </div>
+        
+            <!-- Новость 4 -->
+            <div class="news-item">
+              <div class="news-img">
+                <img src="../images/5-122-600x400.jpg" alt="Тренировка Титанов">
+              </div>
+              <div class="news-content">
+                <div class="news-title">Новый нападающий из Бразилии подпишет контракт с клубом</div>
+                <div class="news-text">21-летний Лео Сильва станет усилением линии атаки.
+                </div>
+                <div class="news-date">11 апреля 2026 в 11:30</div>
+              </div>
+              <div class="news-meta">
+                <div class="tag">Тренировка</div>
+                <div class="hashtags">#Титаны<br>#Трансфер</div>
+              </div>
+            </div>
+        
+            <!-- Новость 5 -->
+            <div class="news-item">
+              <div class="news-img">
+                <img src="../images/frame-600x338.jpg" alt="Форма 2026">
+              </div>
+              <div class="news-content">
+                <div class="news-title">Фанаты "Титанов" организуют выезд в Химки</div>
+                <div class="news-text">Более 500 болельщиков зарегистрировались на совместную поездку на выездной матч.</div>
+                <div class="news-date">11 апреля 2026 в 09:00</div>
+              </div>
+              <div class="news-meta">
+                <div class="tag">Событие</div>
+                <div class="hashtags">#Фанаты<br></div>
+              </div>
+            </div>
+            <div class="news-item">
+                <div class="news-img">
+                  <img src="../images/5388822018511726223-600x400.jpg" alt="Форма 2026">
+                </div>
+                <div class="news-content">
+                  <div class="news-title">"Титаны" объявили о строительстве новой тренировочной базы</div>
+                  <div class="news-text">Современный комплекс появится к лету 2026 года в пригороде.</div>
+                  <div class="news-date">10 апреля 2026 в 09:00</div>
+                </div>
+                <div class="news-meta">
+                  <div class="tag">Событие</div>
+                  <div class="hashtags">#Тренировки</div>
+                </div>
+              </div>
+              <div class="news-item">
+                <div class="news-img">
+                  <img src="../images/savichev.png" alt="Форма 2026">
+                </div>
+                <div class="news-content">
+                  <div class="news-title">Защитник Константин Савичев получил вызов в сборную России</div>
+                  <div class="news-text">Это его первый шанс проявить себя на международной арене.</div>
+                  <div class="news-date">10 апреля 2026 в 08:32</div>
+                </div>
+                <div class="news-meta">
+                  <div class="tag">Команда</div>
+                  <div class="hashtags">#СборнаяРоссии<br></div>
+                </div>
+              </div>
+              <div class="news-item">
+                <div class="news-img">
+                  <img src="../images/5-34-600x400.jpg" alt="Форма 2026">
+                </div>
+                <div class="news-content">
+                  <div class="news-title">На матче со "Спартаком" ожидается аншлаг</div>
+                  <div class="news-text">Осталось меньше 50 билетов в продаже на центральную трибу</div>
+                  <div class="news-date">9 апреля 6 в 15:09</div>
+                </div>
+                <div class="news-meta">
+                  <div class="tag">Билеты</div>
+                  <div class="hashtags">#Российская Премьер Лига тур 25</div>
+                </div>
+              </div>
+              <div class="news-item">
+                <div class="news-img">
+                  <img src="../images/4z6a6549-600x406.jpg" alt="Форма 2026">
+                </div>
+                <div class="news-content">
+                  <div class="news-title">Полузащитник Владимир Хубулов выбыл на 3 недели из-за травмы</div>
+                  <div class="news-text">Повреждение было получено в матче с "Краснодаром".</div>
+                  <div class="news-date">8 апреля 2026 в 12:10</div>
+                </div>
+                <div class="news-meta">
+                  <div class="tag">Событие</div>
+                  <div class="hashtags">#Травмы</div>
+                </div>
+              </div>
+              <div class="news-item">
+                <div class="news-img">
+                  <img src="../images/alexeivlasov.jpg" alt="Форма 2026">
+                </div>
+                <div class="news-content">
+                  <div class="news-title">Алексей Власов покинет "Титаны" летом</div>
+                  <div class="news-text">Генеральный директор завершит работу в клубе в конце июля 2026 года после четырёх лет во главе организации из-за желания посвятить больше времени семье.</div>
+                  <div class="news-date">7 апреля 2026 в 19:22</div>
+                </div>
+                <div class="news-meta">
+                  <div class="tag">Событие</div>
+                  <div class="hashtags">#Директор</div>
+                </div>
+              </div>
+
+
+
+
+        
+          </div>
+          
+          
+          
+    </main>
+
+    <footer>
+        <div class="footer-partners">
+            <h3>ПАРТНЕРЫ</h3>
+            <div class="footer-partner-logos">
+                <a href="https://www.championat.com/"><img src="../images/chempionatt.webp" alt="ladaa"></a>
+                <a href="https://www.sports.ru/"><img src="../images/sports.webp" alt="aeroflotik"></a>
+                <a href="https://railfgk.ru/"><img src="../images/fedgruzkomp.webp" alt="megafon"></a>
+                <a href="https://www.sogaz.ru/"><img src="../images/cogaz.webp" alt="wildberries"></a>
+            </div>
+        </div>
+    
+       
+    
+        <div class="footer-socials">
+            <a href="https://vk.com/feed"><img src="../images/vk.png" alt="VK"></a>
+            <a href="https://web.telegram.org/"><img src="../images/telegram.png" alt="telegram"></a>
+            <a href="https://www.youtube.com/"><img src="../images/youtube (1).png" alt="youtube"></a>
+        </div>
+    
+        <div class="footer-legal">
+            <p style="color: white; font-size: 17px;">© ФК Титаны - 2026</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const authIcon = document.getElementById("authIcon");
+            const authPopup = document.getElementById("authPopup");
+            const loginForm = document.getElementById("loginForm");
+            const registerForm = document.getElementById("registerForm");
+            const openRegister = document.getElementById("openRegister");
+            const openLogin = document.getElementById("openLogin");
+    
+            authIcon.addEventListener("click", function (event) {
+                event.stopPropagation();
+                authPopup.style.display = authPopup.style.display === "block" ? "none" : "block";
+            });
+    
+
+            document.addEventListener("click", function (event) {
+                if (!authPopup.contains(event.target) && event.target !== authIcon) {
+                    authPopup.style.display = "none";
+                }
+            });
+    
+
+            openRegister.addEventListener("click", function (event) {
+                event.preventDefault();
+                loginForm.style.display = "none";
+                registerForm.style.display = "block";
+            });
+
+            openLogin.addEventListener("click", function (event) {
+                event.preventDefault();
+                registerForm.style.display = "none";
+                loginForm.style.display = "block";
+            });
+        });
+    </script>
+</body>
+</html>

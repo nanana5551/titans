@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Вход / Регистрация - Титаны</title>
+  <link rel="stylesheet" href="../style/login.css" />
+</head>
+<body>
+  <div class="main-layout">
+  <header>
+    <div class="logo">
+      <img src="../images/1.png" alt="FC Titans">
+      <h1 class="club-name"><a href="../index.html">Титаны</a></h1>
+  </div>
+  
+    <nav>
+      <ul>
+        <li><a href="../index.html">Главная</a></li>
+        <li><a href="../pages/club.html">Клуб</a></li>
+        <li><a href="../pages/team.html">Команда</a></li>
+        <li><a href="../pages/tamaev.html">Матчи</a></li>
+        <li><a href="../pages/news.html">Новости</a></li>
+        <li><a href="shop.html" class="active">Магазин</a></li>
+        <li><a href="../pages/table.html">Таблица РПЛ</a></li>
+      </ul>
+    </nav>
+  
+    <div class="header-actions">
+      <a href="../pages/shop.html">
+      <div class="cart-icon" onclick="toggleCart()">🛒 <span id="cartCount">0</span></div></a>
+      <a href="account.html" class="avatar-link">
+        <img src="../images/user-interface.png" alt="Личный кабинет" class="avatar" />
+      </a>
+    </div>
+  </header>
+
+
+  <main>
+    <div class="auth-container">
+      <div class="tab-switcher">
+        <button class="tab-button active" onclick="showTab('login')">Вход</button>
+        <button class="tab-button" onclick="showTab('register')">Регистрация</button>
+      </div>
+
+      <div id="loginTab" class="tab-content active">
+        <h2>Вход в личный кабинет</h2>
+        <form id="loginForm">
+          <input type="text" id="loginName" placeholder="Имя" required />
+          <input type="email" id="loginEmail" placeholder="Email" required />
+          <button type="submit">Войти</button>
+        </form>
+      </div>
+
+      <div id="registerTab" class="tab-content">
+        <h2>Регистрация</h2>
+        <form id="registerForm">
+          <input type="text" id="registerName" placeholder="Имя" required />
+          <input type="email" id="registerEmail" placeholder="Email" required />
+          <input type="password" id="registerPassword" placeholder="Пароль" required />
+          <button type="submit">Зарегистрироваться</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-partners">
+      <h3>ПАРТНЕРЫ</h3>
+      <div class="footer-partner-logos">
+        <a href="https://www.championat.com/"><img src="../images/chempionatt.webp" alt=""></a>
+        <a href="https://www.sports.ru/"><img src="../images/sports.webp" alt=""></a>
+        <a href="https://railfgk.ru/"><img src="../images/fedgruzkomp.webp" alt=""></a>
+        <a href="https://www.sogaz.ru/"><img src="../images/cogaz.webp" alt=""></a>
+      </div>
+    </div>
+
+    <div class="footer-socials">
+      <a href="https://vk.com/feed"><img src="../images/vk.png" alt="VK" /></a>
+      <a href="https://web.telegram.org/"><img src="../images/telegram.png" alt="telegram" /></a>
+      <a href="https://www.youtube.com/"><img src="../images/youtube (1).png" alt="youtube" /></a>
+    </div>
+
+    <div class="footer-legal">
+      <p style="color: white; font-size: 17px;">© ФК Титаны - 2026</p>
+    </div>
+  </footer>
+</div>
+
+  <script>
+    function showTab(tabName) {
+      const loginTab = document.getElementById("loginTab");
+      const registerTab = document.getElementById("registerTab");
+      const buttons = document.querySelectorAll(".tab-button");
+
+      loginTab.classList.remove("active");
+      registerTab.classList.remove("active");
+      buttons.forEach(btn => btn.classList.remove("active"));
+
+      if (tabName === "login") {
+        loginTab.classList.add("active");
+        buttons[0].classList.add("active");
+      } else {
+        registerTab.classList.add("active");
+        buttons[1].classList.add("active");
+      }
+    }
+
+    // Логика входа
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById("loginName").value.trim();
+      const email = document.getElementById("loginEmail").value.trim();
+
+      if (!name || !email) {
+        alert("Пожалуйста, заполните все поля");
+        return;
+      }
+
+      localStorage.setItem("username", name);
+      localStorage.setItem("email", email);
+      localStorage.setItem("loggedIn", "true");
+      window.location.href = "account.html";
+    });
+
+    // Логика регистрации
+    document.getElementById("registerForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById("registerName").value.trim();
+      const email = document.getElementById("registerEmail").value.trim();
+      const password = document.getElementById("registerPassword").value.trim();
+
+      if (!name || !email || !password) {
+        alert("Пожалуйста, заполните все поля");
+        return;
+      }
+
+      localStorage.setItem("username", name);
+      localStorage.setItem("email", email);
+      localStorage.setItem("password", password); // ⚠️ Только для демонстрации
+      localStorage.setItem("loggedIn", "true");
+
+      alert("Регистрация прошла успешно!");
+      window.location.href = "account.html";
+    });
+  </script>
+</body>
+</html>
+

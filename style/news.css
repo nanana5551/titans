@@ -1,0 +1,529 @@
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f9f9f9;
+  }
+  
+  header {
+    background-color: #c60428;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .header-actions {
+      margin-top: 10px;
+      justify-content: center;
+    }
+  
+    nav {
+      margin-top: 10px;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+  
+
+nav ul li {
+  display: inline;
+
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+  
+  main {
+    padding: 30px;
+  }
+  
+  .product-grid {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .product {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 220px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .product img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .cart {
+    margin-top: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .cart.hidden,
+  #checkoutForm.hidden {
+    display: none;
+  }
+  
+  .cart-icon {
+    cursor: pointer;
+    font-size: 20px;
+    background: white;
+    color: #c60428;
+    padding: 5px 10px;
+    border-radius: 8px;
+  }
+  
+  #checkoutForm {
+    margin-top: 20px;
+  }
+  
+  form input {
+    padding: 8px;
+    margin: 5px 0;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+    padding-right: 20px;
+  }
+  
+  .avatar-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #fff; /* Можно убрать или заменить при необходимости */
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  
+  .avatar:hover {
+    transform: scale(1.05);
+    border: 2px solid #333;
+  }
+
+  #checkoutForm {
+    margin-top: 30px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  #checkoutForm button[type="submit"] {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #c60428;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+  }
+  
+  #checkoutForm button[type="submit"]:hover {
+    background-color: #a50322;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.club-name {
+  font-size: 26px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.club-name a{
+  font-size: 26px;
+  text-decoration: none;
+  color: white;
+}  
+  
+
+
+footer {
+    background-color: #c60428;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative; 
+    z-index: 10; 
+}
+
+.partners, .social-media {
+    margin-bottom: 20px;
+}
+
+.partners h3, .social-media h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.partners-logos, .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.partners-logos img {
+    height: 50px;
+    width: auto;
+}
+
+.social-icons a img {
+    height: 40px;
+    width: 40px;
+    transition: transform 0.3s;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.1);
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo {
+        width: 40px;
+    }
+
+    nav ul {
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+}
+
+.footer-partners h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer-partner-logos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.footer-section {
+    margin: 0 20px;
+}
+
+.footer-section h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-socials {
+    margin-top: 20px;
+}
+
+.footer-socials a img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+.footer-legal {
+    margin-top: 20px;
+    font-size: 17px;
+    color: white;
+}
+
+.footer-legal a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-legal a:hover {
+    text-decoration: underline;
+}
+
+.news-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .news-item {
+    display: flex;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    align-items: flex-start;
+  }
+
+  .news-img {
+    flex-shrink: 0;
+    width: 380px;
+    height: auto;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .news-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+  }
+
+  .news-content {
+    flex-grow: 1;
+    padding: 0 20px;
+  }
+
+  .news-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .news-text {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .news-date {
+    font-size: 14px;
+    color: #777;
+  }
+
+  .news-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: auto;
+    gap: 10px;
+  }
+
+  .tag {
+    background-color: #6d55f8;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .hashtags {
+    font-size: 13px;
+    color: #333;
+    line-height: 1.4;
+    text-align: right;
+  }
+
+@media (max-width: 900px) {
+  header {
+    padding: 16px;
+    gap: 14px;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  nav ul {
+    gap: 8px 12px;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+
+  .header-actions {
+    margin-left: 0;
+    padding-right: 0;
+  }
+
+  main {
+    padding: 18px;
+  }
+
+  .news-container {
+    gap: 24px;
+  }
+
+  .news-item {
+    flex-direction: column;
+    padding: 14px;
+  }
+
+  .news-img {
+    width: 100%;
+  }
+
+  .news-content {
+    padding: 14px 0 0;
+  }
+
+  .news-meta {
+    align-items: flex-start;
+    margin-left: 0;
+    margin-top: 12px;
+  }
+
+  .hashtags {
+    text-align: left;
+  }
+}
+
+.header-actions a,
+.header-actions a:hover,
+.header-actions a:focus,
+header > a,
+header > a:hover,
+header > a:focus {
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  nav ul {
+    flex-direction: row;
+  }
+
+  .club-name,
+  .club-name a {
+    font-size: 22px;
+  }
+
+  .news-title {
+    font-size: 16px;
+  }
+}

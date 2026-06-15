@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости ФК "Титаны"</title>
+    <link rel="stylesheet" href=".">
+    <link rel="icon" type="image/png" href="../images/akron.png">
+</head>
+<body>
+    <header>
+        <style>
+            * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: rgb(235, 237, 240);
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+header {
+    background-color: #c60428;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.club-name {
+    font-size: 26px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.club-name a{
+    font-size: 26px;
+    text-decoration: none;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #c60428;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative; 
+    z-index: 10; 
+}
+
+.partners, .social-media {
+    margin-bottom: 20px;
+}
+
+.partners h3, .social-media h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.partners-logos, .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.partners-logos img {
+    height: 50px;
+    width: auto;
+}
+
+.social-icons a img {
+    height: 40px;
+    width: 40px;
+    transition: transform 0.3s;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.1);
+}
+
+.footer-partners h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer-partner-logos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.footer-partner-logos img {
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.footer-section {
+    margin: 0 20px;
+}
+
+.footer-section h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-socials {
+    margin-top: 20px;
+}
+
+.footer-socials a img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+.footer-legal {
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.footer-legal a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-legal a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+    body {
+        background-attachment: scroll;
+    }
+
+    header {
+        padding: 16px;
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px 12px;
+        padding: 0;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .club-name,
+    .club-name a {
+        font-size: 22px;
+    }
+}
+        </style>
+        <div class="logo">
+            <img src="../images/1.png" alt="FC Titans">
+            <h1 class="club-name"><a href="../index.html">Титаны</a></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="../pages/club.html">Клуб</a></li>
+                <li><a href="../pages/team.html">Команда</a></li>
+                <li><a href="../pages/tamaev.html">Матчи</a></li>
+                <li><a href="../pages/news.html">Новости</a></li>
+                <li><a href="../pages/shop.html">Магазин</a></li>
+                <li><a href="../pages/table.html">Таблица РПЛ</a></li>
+            </ul>
+        </nav>  
+    </header>
+    <footer>
+        <div class="footer-partners">
+            <h3>ПАРТНЕРЫ</h3>
+            <div class="footer-partner-logos">
+                <a href="https://www.championat.com/"><img src="../images/chempionatt.webp" alt="ladaa"></a>
+                <a href="https://www.sports.ru/"><img src="../images/sports.webp" alt="aeroflotik"></a>
+                <a href="https://railfgk.ru/"><img src="../images/fedgruzkomp.webp" alt="megafon"></a>
+                <a href="https://www.sogaz.ru/"><img src="../images/cogaz.webp" alt="wildberries"></a>
+            </div>
+        </div>
+    
+       
+    
+        <div class="footer-socials">
+            <a href="https://vk.com/feed"><img src="../images/vk.png" alt="VK"></a>
+            <a href="https://web.telegram.org/"><img src="../images/telegram.png" alt="telegram"></a>
+            <a href="https://www.youtube.com/"><img src="../images/youtube (1).png" alt="youtube"></a>
+        </div>
+    
+        <div class="footer-legal">
+            <p style="color: white; font-size: 17px;">© ФК Титаны - 2025</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,839 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('../images/5c7b8d8aa935d135cebb15795b113084.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+  
+  header {
+    background-color: #c60428;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .header-actions {
+      margin-top: 10px;
+      justify-content: center;
+    }
+  
+    nav {
+      margin-top: 10px;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+  
+
+nav ul li {
+  display: inline;
+
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+  
+  main {
+    padding: 30px;
+  }
+  
+  .product-grid {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .product {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 220px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .product img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .cart {
+    margin-top: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .cart.hidden,
+  #checkoutForm.hidden {
+    display: none;
+  }
+  
+  .cart-icon {
+    cursor: pointer;
+    font-size: 20px;
+    background: white;
+    color: #c60428;
+    padding: 5px 10px;
+    border-radius: 8px;
+  }
+  
+  #checkoutForm {
+    margin-top: 20px;
+  }
+  
+  form input {
+    padding: 8px;
+    margin: 5px 0;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+    padding-right: 20px;
+  }
+  
+  .avatar-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #fff; /* Можно убрать или заменить при необходимости */
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  
+  .avatar:hover {
+    transform: scale(1.05);
+    border: 2px solid #333;
+  }
+
+  #checkoutForm {
+    margin-top: 30px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  #checkoutForm button[type="submit"] {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #c60428;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+  }
+  
+  #checkoutForm button[type="submit"]:hover {
+    background-color: #a50322;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.club-name {
+  font-size: 26px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.club-name a{
+  font-size: 26px;
+  text-decoration: none;
+  color: white;
+}  
+  
+
+
+/* Секция Hero */
+.hero {
+    text-align: center;
+    padding: 150px 20px;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hero .btn {
+    background-color: #d60000;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.hero .btn:hover {
+    background-color: #c20000;
+}
+
+/* Новости */
+
+
+.news-section {
+    padding: 40px 5%;
+    background: rgba(0, 0, 0, 0.7); 
+}
+
+
+.news-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: white; 
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); 
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.news-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.news-filter {
+    padding: 8px 15px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2); 
+    color: white;
+    border-radius: 20px;
+    transition: 0.3s ease;
+    backdrop-filter: blur(5px); 
+}
+
+.news-filter.active,
+.news-filter:hover {
+    background-color: rgba(255, 0, 0, 0.8);
+}
+
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+
+.news-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+    transform: scale(1.02);
+}
+
+
+.news-card.large {
+    grid-column: span 2;
+    height: 300px;
+}
+
+
+.news-card img {
+    width: 330px;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+
+.news-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+}
+
+
+.news-category {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.news-category.red {
+    color: #ff3b3b;
+}
+
+.news-category.blue {
+    color: #4da6ff;
+}
+
+
+.news-headline {
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7); 
+}
+
+.news-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+
+footer {
+    background-color: #c60428;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative; 
+    z-index: 10; 
+}
+
+.partners h3, .social-media h3 {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.partners-logos, .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.partners-logos img {
+    height: 50px;
+    width: auto;
+}
+
+.social-icons a img {
+    height: 40px;
+    width: 40px;
+    transition: transform 0.3s;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.1);
+}
+
+.trophies {
+    padding: 50px 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.trophies h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.trophies-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.trophy-item {
+    background: white;
+    color: black;
+    border-radius: 10px;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.trophy-item img {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 10px;
+}
+
+.trophy-item h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.trophy-item p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.auth-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.auth-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.auth-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.auth-popup {
+    display: none;
+    position: absolute;
+    right: 50px;
+    top: 70px;
+    background: white;
+    color: black;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    z-index: 100;
+}
+
+.auth-popup input {
+    width: 100%;
+    padding: 7px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.auth-popup .login-btn,
+.auth-popup .register-btn {
+    width: 100%;
+    background: #c60428;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.auth-popup .login-btn:hover,
+.auth-popup .register-btn:hover {
+    background: #a30322;
+}
+
+.auth-popup p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.auth-popup a {
+    color: #c60428;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-popup a:hover {
+    text-decoration: underline;
+}
+
+.news-slider {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: 400px;
+}
+
+.news-item {
+    position: relative;
+    min-width: 25%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out;
+    display: block;
+}
+
+.news-item:hover {
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+.news-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+}
+.news-link {
+    display: block;
+    min-width: 25%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.footer-partners h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer-partner-logos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-partner-logos img {
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+}
+
+.footer-section h4 {
+    font-size: 16px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-socials {
+
+}
+
+.footer-socials a img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+.footer-legal {
+    margin-top: 20px;
+    font-size: 17px;
+}
+
+.footer-legal a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-legal a:hover {
+    text-decoration: underline;
+}
+
+.club-section {
+    padding: 40px 8%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+
+.club-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.club-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+
+.club-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.club-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+.club-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+
+.club-info {
+    padding: 15px;
+}
+
+
+.club-category {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.club-category.red {
+    color: #ff3b3b;
+}
+
+.club-category.blue {
+    color: #4da6ff;
+}
+
+.club-category.pink {
+    color: #ff4da6;
+}
+
+.club-headline {
+    font-size: 18px;
+    font-weight: bold;
+    color: #121212;
+}
+
+.club-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.header-actions a,
+.header-actions a:hover,
+.header-actions a:focus,
+header > a,
+header > a:hover,
+header > a:focus {
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  header {
+    padding: 16px;
+    gap: 14px;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  nav ul {
+    gap: 8px 12px;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+
+  .header-actions {
+    margin-left: 0;
+    padding-right: 0;
+  }
+
+  .hero {
+    padding: 80px 16px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero .btn {
+    display: inline-block;
+    max-width: 100%;
+  }
+
+  .news-slider {
+    height: auto;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .news-slider .news-link {
+    min-width: 85%;
+    height: 280px;
+    scroll-snap-align: start;
+  }
+
+  .news-item {
+    min-width: 100%;
+  }
+
+  .news-content {
+    right: 12px;
+    left: 12px;
+    bottom: 12px;
+  }
+
+  .news-grid,
+  .club-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .news-card img {
+    width: 100%;
+    height: 220px;
+  }
+
+  .footer-partner-logos {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .club-name,
+  .club-name a {
+    font-size: 22px;
+  }
+
+  nav ul {
+    flex-direction: row;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p,
+  .news-headline,
+  .club-headline {
+    font-size: 16px;
+  }
+}
